@@ -63,6 +63,7 @@ let g:indent_guides_guide_size = 1
 Plug 'lilydjwg/colorizer'  " colorize CSS inline
 
 Plug 'kien/ctrlp.vim'  " fuzzy file matcher / opener
+let g:ctrlp_user_command="find '%s' ! -wholename '*/.git/*' ! -wholename '*/node_modules/*' ! -wholename '*/report/*' -type f"
 
 Plug 'fisadev/vim-ctrlp-cmdpalette'  " fuzzy command matcher / runner
 "TODO: detect SHIFT?: map <Shift><C-p> :CtrlPCmdPalette<CR>
