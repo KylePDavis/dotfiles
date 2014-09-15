@@ -78,12 +78,10 @@ let g:ConqueTerm_CloseOnEnd = 1
 
 Plug 'moll/vim-node'  " nodejs extras
 
-Plug 'sidorares/node-vim-debugger'  " nodejs debugger
+Plug 'sidorares/node-vim-debugger', { 'do': 'cd ~/.vim/plugged/node-vim-debugger/ && npm install' }  " nodejs debugger
 command NodeDebug call conque_term#open('node ' . expand('~/.vim/plugged/node-vim-debugger/bin/vim-inspector') . ' "' . expand('%') . '"', ['belowright split'])
 
 call plug#end()
 if !HAS_PLUG
-	:PlugInstall
-	silent !cd ~/.vim/plugged/node-vim-debugger/ && npm install
-	:source ~/.vimrc
+	PlugInstall
 endif
