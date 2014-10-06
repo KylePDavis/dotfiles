@@ -1,12 +1,15 @@
 " essentials
-syntax on
 set ruler
-set bg=dark
 set mouse=a
 set nocompatible
 set bs=2
 set hlsearch
 set nowrap
+
+" give me all of teh colors!!
+set bg=dark
+colorscheme elflord
+syntax on
 
 " tabs and indents
 set shiftwidth=4 tabstop=4 softtabstop=4
