@@ -57,6 +57,7 @@ map <C-\> :NERDTreeToggle<CR>
 "TODO: detect SHIFT?: map <Shift><C-\> :NERDTreeFind<CR>
 
 Plug 'scrooloose/syntastic'  " multi-language syntax checker
+let g:syntastic_check_on_open=1
 
 Plug 'ntpeters/vim-better-whitespace'  " whitespace!!
 let g:strip_whitespace_on_save = 1
