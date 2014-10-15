@@ -64,8 +64,8 @@ let g:better_whitespace_filetypes_blacklist=['conque_term']
 Plug 'nathanaelkane/vim-indent-guides'  " pretty indent guides with softtabs
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter * :highlight IndentGuidesOdd ctermbg=232
-autocmd VimEnter * :highlight IndentGuidesEven ctermbg=233
+autocmd VimEnter * :highlight IndentGuidesOdd ctermbg=233
+autocmd VimEnter * :highlight IndentGuidesEven ctermbg=234
 autocmd VimEnter * :IndentGuidesEnable
 
 Plug 'lilydjwg/colorizer'  " colorize CSS inline
