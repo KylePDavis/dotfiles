@@ -7,15 +7,13 @@ set hlsearch
 set nowrap
 
 " give me all of teh colors!!
+set t_Co=256
 set bg=dark
 colorscheme elflord
 syntax on
 
 " tabs and indents
 set shiftwidth=4 tabstop=4 softtabstop=4
-"set list lcs=tab:\ \  " pretty indent guides when using tabs
-"set list lcs=tab:\⦚\  " pretty indent guides when using tabs
-"highlight SpecialKey ctermbg=darkgray guifg=#424242
 
 " tab based indention behaviors
 vmap <Tab> >
@@ -65,6 +63,9 @@ let g:better_whitespace_filetypes_blacklist=['conque_term']
 
 Plug 'nathanaelkane/vim-indent-guides'  " pretty indent guides with softtabs
 let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter * :highlight IndentGuidesOdd ctermbg=232
+autocmd VimEnter * :highlight IndentGuidesEven ctermbg=233
 autocmd VimEnter * :IndentGuidesEnable
 
 Plug 'lilydjwg/colorizer'  " colorize CSS inline
