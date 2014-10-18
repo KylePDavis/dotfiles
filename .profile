@@ -83,6 +83,7 @@ _install_dev_sh() {
 
 _install_dev_py() {
 	_install_homebrew
+	mkdir -p "$PYTHONPATH"
 	PKG=pylint;  which "$PKG" >/dev/null  ||  (easy_install -d "$PYTHONPATH" "$PKG"  &&  ln -sv "$PYTHONPATH/$PKG" "$(brew --prefix)/bin/$PKG")
 	PKG=pep8;    which "$PKG" >/dev/null  ||  (easy_install -d "$PYTHONPATH" "$PKG"  &&  ln -sv "$PYTHONPATH/$PKG" "$(brew --prefix)/bin/$PKG")
 }
