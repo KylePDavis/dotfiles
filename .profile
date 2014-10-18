@@ -54,6 +54,7 @@ _install_tools() {
 	which tmux >/dev/null  ||  brew install tmux
 	[ -f "$HOME/.bash_profile" ]  ||  ln -sv "$HOME/.profile" "$HOME/.bash_profile"
 	[ -f "$HOME/.bashrc" ]        ||  ln -sv "$HOME/.profile" "$HOME/.bashrc"
+	which git-alias >/dev/null  ||  brew install git-extras
 }
 
 _install_dev_js() {
