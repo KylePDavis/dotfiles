@@ -54,6 +54,10 @@ _install_tools() {
 	which tmux >/dev/null  ||  brew install tmux
 	[ -f "$HOME/.bash_profile" ]  ||  ln -sv "$HOME/.profile" "$HOME/.bash_profile"
 	[ -f "$HOME/.bashrc" ]        ||  ln -sv "$HOME/.profile" "$HOME/.bashrc"
+	[ -f "$HOME/.gitconfig" ]  ||  (
+		git config --global color.ui true
+		git config --global credential.helper "$([ "$(uname -s)" = "Darwin" ] && echo "osxkeychain" || echo "cache --timeout=3600")"
+	)
 	which git-alias >/dev/null  ||  brew install git-extras
 	[ "$(git alias)" ]  ||  (
 		git alias br branch
