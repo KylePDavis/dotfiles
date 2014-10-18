@@ -55,6 +55,13 @@ _install_tools() {
 	[ -f "$HOME/.bash_profile" ]  ||  ln -sv "$HOME/.profile" "$HOME/.bash_profile"
 	[ -f "$HOME/.bashrc" ]        ||  ln -sv "$HOME/.profile" "$HOME/.bashrc"
 	which git-alias >/dev/null  ||  brew install git-extras
+	[ "$(git alias)" ]  ||  (
+		git alias br branch
+		git alias ci commit
+		git alias co checkout
+		git alias di diff
+		git alias st status
+	)
 }
 
 _install_dev_js() {
