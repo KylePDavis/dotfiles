@@ -52,6 +52,7 @@ _install_tools() {
 	_install_homebrew
 	[ -d "$HOME/liquidprompt" ]  ||  git clone "https://github.com/nojhan/liquidprompt.git" "$HOME/liquidprompt"
 	which tmux >/dev/null  ||  brew install tmux
+	which tree >/dev/null  ||  brew install tree
 	[ -f "$HOME/.bash_profile" ]  ||  ln -sv "$HOME/.profile" "$HOME/.bash_profile"
 	[ -f "$HOME/.bashrc" ]        ||  ln -sv "$HOME/.profile" "$HOME/.bashrc"
 	[ -f "$HOME/.gitconfig" ]  ||  (
