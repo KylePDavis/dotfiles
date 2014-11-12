@@ -33,7 +33,7 @@ autocmd BufNewFile,BufRead *.md set ft=markdown
 autocmd BufNewFile,BufRead *.go set filetype=go
 
 " run js-beautify with the = key
-autocmd FileType javascript setlocal equalprg=js-beautify\ -f\ -\ -q\ -t\ -j\ -w\ 140\ --good-stuff
+autocmd FileType javascript setlocal equalprg=js-beautify\ -q\ -t\ -w\ 140\ -f\ -
 
 " VIM-PLUG PLUGINS (WITH FIRST-RUN AUTOINSTALL)
 let PLUG_VIM_FILE = expand('~/.vim/autoload/plug.vim')
