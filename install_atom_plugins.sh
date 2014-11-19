@@ -1,7 +1,7 @@
 #!/bin/bash
 # An installable list of the Atom IDE plugins that I use.
 # To get "apm" tool: open Atom and click "Atom->Install Shell Commands"
-apm install "$(cat<<-EOF
+apm install $(cat<<-EOF
 Sublime-Style-Column-Selection
 Tern
 Zen
@@ -82,4 +82,4 @@ trailing-spaces
 tualo-git-context
 turbo-javascript
 EOF
-)"
+)
