@@ -15,6 +15,7 @@ atom-html-preview
 atom-lint
 atomatigit
 atomic-rest
+autocomplete-plus
 center-screen
 change-case
 coffee-refactor
