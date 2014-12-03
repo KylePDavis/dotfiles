@@ -6,3 +6,5 @@ cd ~/Applications/
 curl -sL -o Atom.zip https://atom.io/download/mac
 unzip Atom.zip
 rm Atom.zip
+
+defaults write com.github.atom ApplePressAndHoldEnabled -bool false
