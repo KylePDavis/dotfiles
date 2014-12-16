@@ -75,6 +75,7 @@ _install_dev_js() {
 	PKG=jshint;       which "$PKG" >/dev/null  ||  npm install -g "$PKG"
 	PKG=js-beautify;  which "$PKG" >/dev/null  ||  npm install -g "$PKG"
 	PKG=json;         which "$PKG" >/dev/null  ||  npm install -g "$PKG"
+	PKG=jscs;         which "$PKG" >/dev/null  ||  npm install -g "$PKG"
 }
 
 _install_dev_sh() {
