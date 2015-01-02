@@ -1,7 +1,7 @@
-export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:$HOME/bin"
 
 # Homebrew
-export PATH="$HOME/homebrew/bin:$PATH"
+export PATH="$PATH:$HOME/homebrew/bin"
 export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages/"  # also facilitates:  easy_install -d "$PYTHONPATH" awesome_pkg
 
 # Custom shell aliases
