@@ -49,6 +49,7 @@ _install_homebrew() {
 }
 
 _install_tools() {
+	xcode-select --install  ||  true
 	_install_homebrew
 	[ -d "$HOME/liquidprompt" ]  ||  git clone "https://github.com/nojhan/liquidprompt.git" "$HOME/liquidprompt"
 	which tmux >/dev/null  ||  brew install tmux
