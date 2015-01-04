@@ -95,8 +95,9 @@ _install_dev_py() {
 
 _install_dev_db() {
 	_install_homebrew
-	which mongod >/dev/null  ||  brew install mongodb
-	which redis >/dev/null   ||  brew install redis
+	which mongod >/dev/null  ||  brew install mongodb     &&  ln -sfv "$(brew --prefix mongodb)"/*.plist ~/Library/LaunchAgents/
+	which redis >/dev/null   ||  brew install redis       &&  ln -sfv "$(brew --prefix redis)"/*.plist ~/Library/LaunchAgents/
+	which pg_config          ||  brew install postgresql  &&  ln -sfv "$(brew --prefix postgrsql)"/*.plist ~/Library/LaunchAgents/
 }
 
 _install_dev_go() {
