@@ -29,8 +29,10 @@ F="/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"; 
 F="$HOME/liquidprompt/liquidprompt";  ! [ "$PS1" -a -f "$F" ]  ||  . "$F"
 
 # go lang
-export GOPATH=$(brew --prefix)
-export PATH="$PATH:$(brew --prefix)/opt/go/libexec/bin"
+export GOROOT="$(brew --prefix go)"
+export PATH="$PATH:$GOROOT/bin"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=50000
