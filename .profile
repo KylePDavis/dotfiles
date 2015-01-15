@@ -102,6 +102,6 @@ _install_dev_db() {
 
 _install_dev_go() {
 	_install_homebrew
-	which go >/dev/null  ||  brew install go --cross-compile-common
+	which go >/dev/null  ||  brew install go --with-cc-common
 }
 
