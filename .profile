@@ -4,6 +4,9 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/homebrew/bin"
 export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages/"  # also facilitates:  easy_install -d "$PYTHONPATH" awesome_pkg
 
+# Homebrew cask
+export HOMEBREW_CASK_OPTS="--caskroom=$HOME/homebrew/Caskroom --binarydir=$HOME/homebrew/bin"
+
 # Custom shell aliases
 alias ls="ls -FG"
 alias d="ls"
@@ -48,6 +51,7 @@ export LESS="-FRX"
 
 _install_homebrew() {
 	[ -d "$HOME/homebrew" ]  ||  (mkdir "$HOME/homebrew" 2>/dev/null  &&  curl -L "https://github.com/Homebrew/homebrew/tarball/master" | tar xz --strip 1 -C "$HOME/homebrew"  &&  brew update)
+	brew install caskroom/cask/brew-cask
 }
 
 _install_tools() {
@@ -70,6 +74,10 @@ _install_tools() {
 		git alias di diff
 		git alias st status
 	)
+	[ -d "$HOME/Applications/SourceTree.app" ]     ||  brew cask install sourcetree
+	[ -d "$HOME/Applications/Atom.app" ]           ||  brew cask install atom
+	[ -d "$HOME/Applications/Google Chrome.app" ]  ||  brew cask install google-chrome
+	[ -d "$HOME/Applications/Firefox.app" ]        ||  brew cask install firefox
 }
 
 _install_dev_js() {
