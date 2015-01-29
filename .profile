@@ -50,12 +50,12 @@ export LESS="-FRX"
 ###############################################################################
 
 _install_homebrew() {
+	xcode-select --install 2>&1 | grep -q "already installed"  ||  exit
 	[ -d "$HOME/homebrew" ]  ||  (mkdir "$HOME/homebrew" 2>/dev/null  &&  curl -L "https://github.com/Homebrew/homebrew/tarball/master" | tar xz --strip 1 -C "$HOME/homebrew"  &&  brew update)
 	brew install caskroom/cask/brew-cask
 }
 
 _install_tools() {
-	xcode-select --install  ||  true
 	_install_homebrew
 	[ -d "$HOME/liquidprompt" ]  ||  git clone "https://github.com/nojhan/liquidprompt.git" "$HOME/liquidprompt"
 	which tmux >/dev/null  ||  brew install tmux
