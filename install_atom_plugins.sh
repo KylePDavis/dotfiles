@@ -24,6 +24,7 @@ copy-as-rtf
 coverage
 docblockr
 editorconfig
+fancy-new-file
 file-icons
 filesize
 git-blame
@@ -37,7 +38,11 @@ highlight-cov
 highlight-line
 highlight-selected
 js-refactor
+keybinding-cheatsheet
+language-jade
+language-mumps
 language-svg
+language-viml
 linter
 linter-clang
 linter-coffeelint
@@ -45,17 +50,21 @@ linter-cpplint
 linter-csslint
 linter-javac
 linter-js-yaml
+linter-jscs
 linter-jshint
 linter-pep8
 linter-perl
 linter-pylint
 linter-scss-lint
 linter-shellcheck
+linter-tslint
 linter-write-good
 linter-xmllint
 live-archive
+man
 markdown-format
 merge-conflicts
+minimap
 mocha-test-runner
 nbsp-detect
 node-debugger
@@ -69,6 +78,7 @@ project-colorize
 recent-files
 refactor
 regex-railroad-diagram
+resize-panes
 revert-buffer
 script
 sort-lines
@@ -82,5 +92,6 @@ todo-show
 trailing-spaces
 tualo-git-context
 turbo-javascript
+vim-mode
 EOF
 )
