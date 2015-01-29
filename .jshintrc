@@ -1,0 +1,32 @@
+{
+
+	"camelcase": true,
+	"curly": false,
+	"eqeqeq": true,
+	"forin": true,
+	"immed": true,
+	"latedef": true,
+	"newcap": true,
+	"noarg": true,
+	"noempty": true,
+	"nonbsp": true,
+	"nonew": true,
+	"quotmark": true,
+	"undef": true,
+	"unused": "vars",
+	"strict": false,
+	"trailing": true,
+	"maxparams": 11,
+	"maxdepth": 7,
+	"maxstatements": 42,
+	"maxcomplexity": 13,
+	"maxlen": 140,
+
+	"boss": true,
+	"expr": true,
+	"globalstrict": true,
+
+	"node": true,
+	"devel": false
+
+}
