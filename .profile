@@ -57,11 +57,9 @@ _install_homebrew() {
 
 _install_tools() {
 	_install_homebrew
-	[ -d "$HOME/liquidprompt" ]  ||  git clone "https://github.com/nojhan/liquidprompt.git" "$HOME/liquidprompt"
-	which tmux >/dev/null  ||  brew install tmux
-	which tree >/dev/null  ||  brew install tree
 	[ -f "$HOME/.bash_profile" ]  ||  ln -sv "$HOME/.profile" "$HOME/.bash_profile"
 	[ -f "$HOME/.bashrc" ]        ||  ln -sv "$HOME/.profile" "$HOME/.bashrc"
+	[ -d "$HOME/liquidprompt" ]   ||  git clone "https://github.com/nojhan/liquidprompt.git" "$HOME/liquidprompt"
 	[ -f "$HOME/.gitconfig" ]  ||  (
 		git config --global color.ui true
 		git config --global credential.helper "$([ "$(uname -s)" = "Darwin" ] && echo "osxkeychain" || echo "cache --timeout=3600")"
@@ -74,6 +72,8 @@ _install_tools() {
 		git alias di diff
 		git alias st status
 	)
+	which tmux >/dev/null  ||  brew install tmux
+	which tree >/dev/null  ||  brew install tree
 	[ -d "$HOME/Applications/SourceTree.app" ]     ||  brew cask install sourcetree
 	[ -d "$HOME/Applications/Atom.app" ]           ||  brew cask install atom
 	[ -d "$HOME/Applications/Google Chrome.app" ]  ||  brew cask install google-chrome
