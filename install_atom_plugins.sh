@@ -3,7 +3,6 @@
 # To get "apm" tool: open Atom and click "Atom->Install Shell Commands"
 apm install $(cat<<-EOF
 Sublime-Style-Column-Selection
-Tern
 Zen
 angularjs
 ask-stack
@@ -12,7 +11,7 @@ atom-bootstrap3
 atom-cli-diff
 atom-color-highlight
 atom-html-preview
-atom-lint
+atom-ternjs
 atomatigit
 atomic-rest
 autocomplete-plus
@@ -90,7 +89,6 @@ test-jumper
 test-status
 todo-show
 trailing-spaces
-tualo-git-context
 turbo-javascript
 vim-mode
 EOF
