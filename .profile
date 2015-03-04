@@ -10,7 +10,7 @@ export HOMEBREW_CASK_OPTS="--caskroom=$HOME/homebrew/Caskroom --binarydir=$HOME/
 # Custom shell aliases
 alias ls="ls -FG"
 alias d="ls"
-alias tree='tree -CF'
+alias tree="tree -CF"
 alias grep="grep --color --exclude-dir=.svn --exclude-dir=.git --exclude-dir=node_modules"
 
 # MacVim shell aliases
@@ -83,10 +83,10 @@ _install_tools() {
 _install_dev_js() {
 	_install_homebrew
 	which node >/dev/null  ||  brew install node
-	PKG=jshint;       which "$PKG" >/dev/null  ||  npm install -g "$PKG"
-	PKG=js-beautify;  which "$PKG" >/dev/null  ||  npm install -g "$PKG"
-	PKG=json;         which "$PKG" >/dev/null  ||  npm install -g "$PKG"
-	PKG=jscs;         which "$PKG" >/dev/null  ||  npm install -g "$PKG"
+	PKG="jshint";       which "$PKG" >/dev/null  ||  npm install -g "$PKG"
+	PKG="js-beautify";  which "$PKG" >/dev/null  ||  npm install -g "$PKG"
+	PKG="json";         which "$PKG" >/dev/null  ||  npm install -g "$PKG"
+	PKG="jscs";         which "$PKG" >/dev/null  ||  npm install -g "$PKG"
 }
 
 _install_dev_sh() {
@@ -97,8 +97,8 @@ _install_dev_sh() {
 _install_dev_py() {
 	_install_homebrew
 	mkdir -p "$PYTHONPATH"
-	PKG=pylint;  which "$PKG" >/dev/null  ||  (easy_install -d "$PYTHONPATH" "$PKG"  &&  ln -sv "$PYTHONPATH/$PKG" "$(brew --prefix)/bin/$PKG")
-	PKG=pep8;    which "$PKG" >/dev/null  ||  (easy_install -d "$PYTHONPATH" "$PKG"  &&  ln -sv "$PYTHONPATH/$PKG" "$(brew --prefix)/bin/$PKG")
+	PKG="pylint";  which "$PKG" >/dev/null  ||  (easy_install -d "$PYTHONPATH" "$PKG"  &&  ln -sv "$PYTHONPATH/$PKG" "$(brew --prefix)/bin/$PKG")
+	PKG="pep8";    which "$PKG" >/dev/null  ||  (easy_install -d "$PYTHONPATH" "$PKG"  &&  ln -sv "$PYTHONPATH/$PKG" "$(brew --prefix)/bin/$PKG")
 }
 
 _install_dev_db() {
