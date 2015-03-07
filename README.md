@@ -24,7 +24,6 @@ Highlights
   - inline colors for CSS
   - gutter for VCS changes
 * [Atom][atom] editor scripts
-  - a Mac OS X install script for the [Atom][atom] IDE to make it _even easier_
   - an install script for the plugins that I use
 
 
