@@ -40,7 +40,7 @@ let PLUG_VIM_FILE = expand('~/.vim/autoload/plug.vim')
 let HAS_PLUG = filereadable(PLUG_VIM_FILE)
 if !HAS_PLUG
 	silent !mkdir -p ~/.vim/autoload
-	silent !curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	silent !U=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;  F=~/.vim/autoload/plug.vim;  curl -fLo $F $U 2>/dev/null  ||  wget -qLO $F $U
 endif
 call plug#begin()
 
