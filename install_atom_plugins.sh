@@ -12,6 +12,7 @@ atom-cli-diff
 atom-color-highlight
 atom-html-preview
 atom-ternjs
+atom-typescript
 atomatigit
 atomic-rest
 autocomplete-plus
@@ -27,6 +28,7 @@ fancy-new-file
 file-icons
 filesize
 git-blame
+git-control
 git-difftool
 git-log
 git-plus
@@ -42,7 +44,6 @@ language-jade
 language-mumps
 language-svg
 language-viml
-linter
 linter-clang
 linter-coffeelint
 linter-cpplint
@@ -59,6 +60,7 @@ linter-shellcheck
 linter-tslint
 linter-write-good
 linter-xmllint
+linter
 live-archive
 man
 markdown-format
