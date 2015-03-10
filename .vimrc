@@ -32,10 +32,10 @@ set foldlevelstart=99
 vmap <C-c> :w !pbcopy<CR><CR>
 
 " force syntax on a few file types
-autocmd BufNewFile,BufRead *.json set ft=javascript
-autocmd BufNewFile,BufRead *.es6 set ft=javascript
-autocmd BufNewFile,BufRead *.md set ft=markdown
-autocmd BufNewFile,BufRead *.go set filetype=go
+autocmd BufNewFile,BufReadPost *.json set filetype=javascript
+autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.go set filetype=go
 
 " run js-beautify with the = key
 autocmd FileType javascript setlocal equalprg=js-beautify\ -q\ -t\ -w\ 140\ -f\ -
