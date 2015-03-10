@@ -24,6 +24,10 @@ vmap <S-Tab> <
 nmap <S-Tab> <<
 imap <S-Tab> <Esc><<i
 
+" folds
+set foldmethod=syntax
+set foldlevelstart=99
+
 " coping to Mac OS X clipboard (kinda)
 vmap <C-c> :w !pbcopy<CR><CR>
 
