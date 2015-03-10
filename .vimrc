@@ -12,10 +12,10 @@ set bg=dark
 colorscheme elflord
 syntax on
 
-" tabs and indents
-set shiftwidth=4 tabstop=4 softtabstop=4
-set nocindent
-set smartindent
+" tabs
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 
 " tab based indention behaviors
 vmap <Tab> >
