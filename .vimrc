@@ -33,6 +33,7 @@ vmap <C-c> :w !pbcopy<CR><CR>
 
 " force syntax on a few file types
 autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd BufNewFile,BufRead *.es6 set ft=javascript
 autocmd BufNewFile,BufRead *.md set ft=markdown
 autocmd BufNewFile,BufRead *.go set filetype=go
 
@@ -91,12 +92,18 @@ let g:ConqueTerm_ReadUnfocused = 1
 let g:ConqueTerm_InsertOnEnter = 1
 let g:ConqueTerm_CloseOnEnd = 1
 
+Plug 'pangloss/vim-javascript'  " better JavaScript support
+
 Plug 'moll/vim-node'  " nodejs extras
 
 Plug 'sidorares/node-vim-debugger', { 'do': 'cd ~/.vim/plugged/node-vim-debugger/ && npm install' }  " nodejs debugger
 command NodeDebug call conque_term#open('node ' . expand('~/.vim/plugged/node-vim-debugger/bin/vim-inspector') . ' "' . expand('%') . '"', ['belowright split'])
 
 Plug 'kchmck/vim-coffee-script'  " CoffeeScript support
+
+Plug 'leafgarland/typescript-vim'  " TypeScript support
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 call plug#end()
 if !HAS_PLUG
