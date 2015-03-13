@@ -51,18 +51,14 @@ shopt -s checkwinsize
 
 # Custom shell aliases
 if [ "$OS" = "Darwin" ]; then
-	alias ls="ls -G -CF"
-else
-	alias ls="ls --color -CF"
+	export CLICOLOR="1"
 fi
-alias ll="ls -alF"
+alias d="l"
+alias l="ls -CF"
 alias la="ls -A"
-alias l="ls"
-alias d="ls"
-alias grep="grep --color --exclude-dir=.svn --exclude-dir=.git --exclude-dir=node_modules"
-alias egrep="egrep --color --exclude-dir=.svn --exclude-dir=.git --exclude-dir=node_modules"
-alias fgrep="fgrep --color --exclude-dir=.svn --exclude-dir=.git --exclude-dir=node_modules"
+alias ll="ls -alF"
 alias tree="tree -CF"
+export GREP_OPTIONS="--color --exclude-dir=.svn --exclude-dir=.git --exclude-dir=node_modules"
 
 # color diffs
 ! which colordiff &>/dev/null  ||  alias diff="colordiff"
