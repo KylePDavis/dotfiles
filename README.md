@@ -8,6 +8,14 @@ This also serves as a tool for getting new Mac OS X systems setup in a hurry.
 
 
 
+## Installation
+
+```bash
+curl -fsSL "https://raw.githubusercontent.com/KylePDavis/dotfiles/master/install.sh" | bash -
+```
+
+
+
 ## Highlights
 
 * `.profile`
@@ -23,20 +31,6 @@ This also serves as a tool for getting new Mac OS X systems setup in a hurry.
   - gutter for VCS/SCM changes (e.g., git)
 * [Atom][atom] editor scripts
   - an install script for the plugins that I use
-
-
-
-## Installation
-
-### Clone it
-```bash
-git clone "https://github.com/KylePDavis/dotfiles" "$HOME/.dotfiles"
-```
-
-### Automated
-```bash
-"$HOME/.dotfiles/.install.sh"
-```
 
 
 
