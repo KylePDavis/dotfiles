@@ -4,7 +4,7 @@ My obligatory dotfiles repository to track and share my personal config files.
 
 I tend to keep my customizations lightweight.
 
-This also serves as a tool for getting new Mac OS X systems setup in a hurry.
+This also serves as a tool for getting new Mac OS X and Linux systems setup in a hurry.
 
 
 
