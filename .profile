@@ -52,6 +52,8 @@ shopt -s checkwinsize
 # Custom shell aliases
 if [ "$OS" = "Darwin" ]; then
 	export CLICOLOR="1"
+else
+	alias ls="ls --color=auto"
 fi
 alias d="l"
 alias l="ls -CF"
