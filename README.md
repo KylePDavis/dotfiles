@@ -11,7 +11,7 @@ This also serves as a tool for getting new Mac OS X systems setup in a hurry.
 ## Installation
 
 ```bash
-curl -fsSL "https://raw.githubusercontent.com/KylePDavis/dotfiles/master/install.sh" | bash -
+curl -fsSL "https://github.com/KylePDavis/dotfiles/raw/master/install.sh" | bash -
 ```
 
 
