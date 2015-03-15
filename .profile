@@ -43,7 +43,7 @@ export LESS="-FRX"
 # tweak history behavior a bit
 HISTSIZE=50000
 HISTFILESIZE=500000
-HISTCONTROL="ignoredups:ignorespace"
+HISTCONTROL="ignoreboth"
 shopt -s histappend
 
 # check window size after each command
