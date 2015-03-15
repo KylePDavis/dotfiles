@@ -1,5 +1,4 @@
-dotfiles
-========
+# dotfiles
 
 My obligatory dotfiles repository to track and share my personal config files.
 
@@ -9,44 +8,39 @@ This also serves as a tool for getting new Mac OS X systems setup in a hurry.
 
 
 
-Highlights
-==========
+## Highlights
 
 * `.profile`
-  - a handful of integrated `_install_*` functions to make setup easier
+  - uses [gimme][gimme] to simplify installation (to wrap `apt-get`, [brew][brew], etc)
   - uses [liquidprompt][liquidprompt] for awesome shell prompts
-  - uses [homebrew][homebrew] for integration with common tools
+  - colors for less,
 * `.vimrc`
   - uses [Vim-Plug][vim-plug] to automatically install and load plugins
   - tweaks colors and tabs
   - syntax checking
   - JavaScript and CoffeeScript support
   - inline colors for CSS
-  - gutter for VCS changes
+  - gutter for VCS/SCM changes (e.g., git)
 * [Atom][atom] editor scripts
   - an install script for the plugins that I use
 
 
 
-Installation
-============
+## Installation
 
-Clone it
---------
+### Clone it
 ```bash
-git clone https://github.com/KylePDavis/dotfiles.git
+git clone "https://github.com/KylePDavis/dotfiles" "$HOME/.dotfiles"
 ```
 
-Symlink things
---------------
+### Automated
 ```bash
-ln -s dotfiles/.vimrc ~/.vimrc
-ln -s dotfiles/.profile ~/.profile
+"$HOME/.dotfiles/.install.sh"
 ```
 
 
 
 [liquidprompt]: https://github.com/nojhan/liquidprompt
-[homebrew]: http://brew.sh
+[brew]: http://brew.sh
 [atom]: https://atom.io
 [vim-plug]: https://github.com/junegunn/vim-plug

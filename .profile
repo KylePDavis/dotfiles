@@ -70,18 +70,16 @@ fi
 
 # bash completion FTW
 if [ "$OS" = "Darwin" ]; then
-	! [ -f "$BREW_PREFIX/etc/bash_completion" ]  ||  . "$BREW_PREFIX/etc/bash_completion"
+	F="$BREW_PREFIX/etc/bash_completion";  ! [ -f "$F" ]  ||  . "$F"
+	F="/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash";  ! [ -f "$F" ]  ||  . "$F"
 else
-	! [ -f "/etc/bash_completion" ]  ||  . "/etc/bash_completion"
+	F="/etc/bash_completion";  ! [ -f "$F" ]  ||  . "$F"
 fi
 
-# Git shell aliases
-F="/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash";  ! [ -f "$F" ]  ||  . "$F"
-
 # Liquid Prompt
-F="$HOME/.liquidprompt/liquidprompt";  ! [ "$PS1" -a -f "$F" ]  ||  . "$F"
+F="$HOME/.liquidprompt/liquidprompt";  ! [ -f "$F" ]  ||  . "$F"
 
 # gimme gimme
 [ -d "$HOME/.gimme" ]  ||  curl -fsSL "https://github.com/KylePDavis/gimme/raw/master/gimme" | bash -
-! [ -f "$HOME/.gimme/gimme" ]  ||  . "$HOME/.gimme/gimme"
+F="$HOME/.gimme/gimme";  ! [ -f "$F" ]  ||  . "$F"
 
