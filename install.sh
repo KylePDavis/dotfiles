@@ -12,12 +12,12 @@ CMD_DIR=$(cd "${BASH_SOURCE%/*}"; echo "$PWD")
 link() {
 	local SRC=$1
 	local DST=$2
-	if [[ -f "$DST" ]]; then
-		if ! [[ -L "$DST" ]]; then
-			mkdir -p "${DST%/*}"
+	if ! [[ -L "$DST" ]]; then
+		if [[ -f "$DST" ]]; then
 			mv -vi "$DST" "$DST.bak"
-			ln -sfv "$SRC" "$DST"
 		fi
+		mkdir -p "${DST%/*}"
+		ln -sfv "$SRC" "$DST"
 	fi
 }
 
