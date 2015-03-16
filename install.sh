@@ -34,7 +34,7 @@ link "$CMD_DIR/.node-inspectorrc" "$HOME/.node-inspectorrc"
 mkdir -p "$HOME/.atom"
 for F in "$CMD_DIR/atom/"*; do
 	FN=${F##*/}
-	echo link "$CMD_DIR/atom/$FN" "$HOME/.atom/$FN"
+	link "$CMD_DIR/atom/$FN" "$HOME/.atom/$FN"
 done
 if ! [[ -d "$HOME/.atom/packages/" ]]; then
 	if which apm &>/dev/null; then
