@@ -1,0 +1,63 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * https://atom.io/docs/latest/customizing-atom#customizing-key-bindings
+# * https://atom.io/docs/latest/advanced/keymaps
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it here:
+# https://github.com/bevry/cson#what-is-cson
+
+'atom-workspace':
+  'cmd-u': 'tree-view:toggle'
+
+'atom-workspace atom-text-editor:not([mini])':
+  'cmd-shift-L': 'tree-view:reveal-active-file'
+
+'atom-text-editor':
+  'cmd-shift-B': 'beautify:beautify-editor'
+  'alt-up': 'editor:move-line-up'
+  'alt-down': 'editor:move-line-down'
+  # 'ctrl-alt-left': 'find-and-replace:select-previous' --- TODO: do this
+  'ctrl-alt-left': ''
+  'ctrl-alt-right': 'find-and-replace:select-next'
+  'cmd-l': 'go-to-line:toggle'
+  'cmd-d': 'editor:delete-line'
+  'cmd-shift-D': 'editor:duplicate-lines'
+  'cmd-alt-l': 'editor:fold-current-row'
+  'cmd-shift-alt-L': 'editor:unfold-current-row'
+
+# TODO: more things from ACE that I might care about
+# cmd-option-l toggle-fold
+# cmd-shift-l select-current-line and move-down
+
+# TODO: make :w, :wq, :x, etc. work *SEAMLESSLY*
+#'atom-text-editor.vim-mode:not(.insert-mode)':
+#  ':': 'command-palette:toggle'
+
+'atom-text-editor.vim-mode.visual-mode':
+  '=': 'beautify:beautify-editor'
+
+'atom-text-editor:not(mini) .autocomplete-plus.autocomplete-suggestion-list':
+  # 'tab': 'unset!'
+  'enter': 'autocomplete-plus:confirm'
+  # 'up': 'unset!'
+  # 'down': 'unset!'
+  'ctrl-p': 'autocomplete-plus:select-previous'
+  'ctrl-n': 'autocomplete-plus:select-next'

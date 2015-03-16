@@ -1,0 +1,18 @@
+"*":
+  editor:
+    fontSize: 13
+    invisibles: {}
+    showIndentGuide: true
+    softTabs: false
+    tabLength: 4
+  "tree-view":
+    hideVcsIgnoredFiles: true
+    hideIngoredNames: true
+  linter:
+    showErrorInline: false
+    statusBar: "Show error if the cursor is in range"
+  core:
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]

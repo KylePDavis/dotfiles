@@ -52,6 +52,7 @@ linter-javac
 linter-js-yaml
 linter-jscs
 linter-jshint
+linter-less
 linter-pep8
 linter-perl
 linter-pylint
