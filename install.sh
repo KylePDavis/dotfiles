@@ -21,8 +21,9 @@ link() {
 	fi
 }
 
-link "$CMD_DIR/.profile" "$HOME/.profile"
-link "$CMD_DIR/.profile" "$HOME/.bashrc"
+link "$CMD_DIR/.profile" "$HOME/.profile" # Mac
+link "$CMD_DIR/.profile" "$HOME/.bashrc" # Linux
+link "$CMD_DIR/.profile" "$HOME/.bash_profile" # certain scenarios use this one
 
 link "$CMD_DIR/.vimrc" "$HOME/.vimrc"
 
