@@ -21,7 +21,7 @@ export EDITOR="vim"
 
 # Configure go lang
 if [ "$OS" = "Darwin" ]; then
-	export GOROOT="$BREW_PREFIX/opt/go"
+	export GOROOT="$BREW_PREFIX/opt/go/libexec"
 else
 	export GOROOT="$HOME/golang"
 fi
@@ -84,4 +84,3 @@ F="$HOME/.liquidprompt/liquidprompt";  ! [ -f "$F" ]  ||  . "$F"
 # gimme gimme
 [ -d "$HOME/.gimme" ]  ||  curl -fsSL "https://github.com/KylePDavis/gimme/raw/master/gimme" | bash -
 F="$HOME/.gimme/gimme";  ! [ -f "$F" ]  ||  . "$F"
-
