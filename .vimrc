@@ -41,11 +41,10 @@ autocmd BufNewFile,BufReadPost *.go set filetype=go
 autocmd FileType javascript setlocal equalprg=js-beautify\ -q\ -t\ -w\ 140\ -f\ -
 
 " VIM-PLUG PLUGINS (WITH FIRST-RUN AUTOINSTALL)
-let PLUG_VIM_FILE = expand('~/.vim/autoload/plug.vim')
-let HAS_PLUG = filereadable(PLUG_VIM_FILE)
-if !HAS_PLUG
+if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !mkdir -p ~/.vim/autoload
 	silent !U=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;  F=~/.vim/autoload/plug.vim;  curl -fLo $F $U 2>/dev/null  ||  wget -qLO $F $U
+	autocmd VimEnter * PlugInstall
 endif
 call plug#begin()
 
@@ -104,8 +103,3 @@ Plug 'kchmck/vim-coffee-script'  " CoffeeScript support
 Plug 'leafgarland/typescript-vim'  " TypeScript support
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-
-call plug#end()
-if !HAS_PLUG
-	PlugInstall
-endif
