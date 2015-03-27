@@ -61,6 +61,8 @@ map <C-\> :NERDTreeToggle<CR>
 
 Plug 'scrooloose/syntastic'  " multi-language syntax checker
 let g:syntastic_check_on_open=1
+let g:syntastic_aggregate_errors=1
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 
 Plug 'ntpeters/vim-better-whitespace'  " whitespace!!
 let g:strip_whitespace_on_save = 1
