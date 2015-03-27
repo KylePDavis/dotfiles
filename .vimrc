@@ -103,3 +103,5 @@ Plug 'kchmck/vim-coffee-script'  " CoffeeScript support
 Plug 'leafgarland/typescript-vim'  " TypeScript support
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+call plug#end()
