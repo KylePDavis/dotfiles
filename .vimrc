@@ -32,7 +32,7 @@ set foldlevelstart=99
 vmap <C-c> :w !pbcopy<CR><CR>
 
 " force syntax on a few file types
-autocmd BufNewFile,BufReadPost *.json set filetype=javascript
+autocmd BufNewFile,BufReadPost *.json set filetype=json syntax=javascript
 autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.go set filetype=go
