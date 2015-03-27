@@ -42,8 +42,7 @@ autocmd FileType javascript setlocal equalprg=js-beautify\ -q\ -t\ -w\ 140\ -f\ 
 
 " VIM-PLUG PLUGINS (WITH FIRST-RUN AUTOINSTALL)
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !mkdir -p ~/.vim/autoload
-	silent !U=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;  F=~/.vim/autoload/plug.vim;  curl -fLo $F $U 2>/dev/null  ||  wget -qLO $F $U
+	silent !mkdir -p "$HOME/.vim/autoload"; U="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim";  F="$HOME/.vim/autoload/plug.vim";  curl -fLo "$F" "$U" 2>/dev/null  ||  wget -qLO "$F" "$U"
 	autocmd VimEnter * PlugInstall
 endif
 call plug#begin()
