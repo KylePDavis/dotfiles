@@ -5,9 +5,10 @@
     showIndentGuide: true
     softTabs: false
     tabLength: 4
+    scrollPastEnd: true
   "tree-view":
     hideVcsIgnoredFiles: true
-    hideIngoredNames: true
+    hideIgnoredNames: true
   linter:
     showErrorInline: false
     statusBar: "Show error if the cursor is in range"
