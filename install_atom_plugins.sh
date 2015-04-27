@@ -64,9 +64,7 @@ linter-xmllint
 linter
 live-archive
 man
-markdown-format
 merge-conflicts
-minimap
 mocha-test-runner
 nbsp-detect
 node-debugger
@@ -76,7 +74,6 @@ open-terminal-here
 pain-split
 pdf-view
 pipe
-project-colorize
 recent-files
 refactor
 regex-railroad-diagram

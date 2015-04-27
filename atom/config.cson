@@ -12,8 +12,3 @@
   linter:
     showErrorInline: false
     statusBar: "Show error if the cursor is in range"
-  core:
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
