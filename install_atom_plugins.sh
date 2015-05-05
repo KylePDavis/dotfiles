@@ -15,6 +15,7 @@ atom-ternjs
 atom-typescript
 atomatigit
 atomic-rest
+autocomplete-emojis
 autocomplete-plus
 center-screen
 change-case
@@ -44,6 +45,7 @@ language-jade
 language-mumps
 language-svg
 language-viml
+linter
 linter-clang
 linter-coffeelint
 linter-cpplint
@@ -61,7 +63,6 @@ linter-shellcheck
 linter-tslint
 linter-write-good
 linter-xmllint
-linter
 live-archive
 man
 merge-conflicts
