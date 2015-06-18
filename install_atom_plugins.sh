@@ -16,10 +16,8 @@ atom-typescript
 atomatigit
 atomic-rest
 autocomplete-emojis
-autocomplete-plus
 center-screen
 change-case
-coffee-refactor
 color-picker
 copy-as-rtf
 coverage
@@ -39,7 +37,6 @@ hex
 highlight-cov
 highlight-line
 highlight-selected
-js-refactor
 keybinding-cheatsheet
 language-jade
 language-mumps
@@ -50,6 +47,7 @@ linter-clang
 linter-coffeelint
 linter-cpplint
 linter-csslint
+linter-eslint
 linter-javac
 linter-js-yaml
 linter-jscs
@@ -67,18 +65,13 @@ live-archive
 man
 merge-conflicts
 mocha-test-runner
-nbsp-detect
 node-debugger
 open-in-sourcetree
-open-last-project
 open-terminal-here
 pain-split
 pdf-view
 pipe
-recent-files
-refactor
 regex-railroad-diagram
-resize-panes
 revert-buffer
 script
 sort-lines
