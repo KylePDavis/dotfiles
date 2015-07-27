@@ -38,3 +38,4 @@ curl -fsSL "https://github.com/KylePDavis/dotfiles/raw/master/install.sh" | bash
 [brew]: http://brew.sh
 [atom]: https://atom.io
 [vim-plug]: https://github.com/junegunn/vim-plug
+[gimme]: https://github.com/KylePDavis/gimme
