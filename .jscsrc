@@ -1,4 +1,6 @@
 {
+  "esnext": true,
+  "fileExtensions": [".js", ".es6"],
   "disallowImplicitTypeConversion": ["numeric", "boolean", "binary", "string"],
   "disallowKeywords": ["with"],
   "disallowKeywordsOnNewLine": ["else", "catch", "finally"],
