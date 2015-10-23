@@ -79,7 +79,7 @@ fi
 # bash completion FTW
 if [ "$OS" = "Darwin" ]; then
 	F="$BREW_PREFIX/etc/bash_completion";  ! [ -f "$F" ]  ||  . "$F"
-	F="/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash";  ! [ -f "$F" ]  ||  . "$F"
+	F="$(xcode-select -p)/usr/share/git-core/git-completion.bash";  ! [ -f "$F" ]  ||  . "$F"
 else
 	F="/etc/bash_completion";  ! [ -f "$F" ]  ||  . "$F"
 fi
