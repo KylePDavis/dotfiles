@@ -10,5 +10,8 @@
     hideVcsIgnoredFiles: true
     hideIgnoredNames: true
   linter:
-    showErrorInline: false
-    statusBar: "Show error if the cursor is in range"
+    inlineTooltipInterval: 1000
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+  "atom-ternjs": {}
+  core: {}
