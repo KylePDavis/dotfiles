@@ -12,7 +12,7 @@
   "disallowSpaceBeforeBinaryOperators": [","],
   "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
   "disallowSpacesInFunctionExpression": {
-  	"beforeOpeningRoundBrace": true
+    "beforeOpeningRoundBrace": true
   },
   "disallowSpacesInsideArrayBrackets": true,
   "disallowSpacesInsideObjectBrackets": true,
@@ -26,22 +26,33 @@
   "requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch"],
   "requireSpaceBeforeBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!=="],
   "requireSpacesInConditionalExpression": {
-  	"afterTest": true,
-  	"beforeConsequent": true,
-  	"afterConsequent": true,
-  	"beforeAlternate": true
+    "afterTest": true,
+    "beforeConsequent": true,
+    "afterConsequent": true,
+    "beforeAlternate": true
   },
   "requireSpacesInFunctionExpression": {
-  	"beforeOpeningCurlyBrace": true
+    "beforeOpeningCurlyBrace": true
   },
   "requireTrailingComma": {
-  	"ignoreSingleLine": true,
-  	"ignoreSingleValue": true
+    "ignoreSingleLine": true,
+    "ignoreSingleValue": true
   },
   "safeContextKeyword": ["self"],
-  "validateJSDoc": {
-	"checkParamNames": true,
-	"checkRedundantParams": true,
-	"requireParamTypes": true
+  "jsDoc": {
+    "checkAnnotations": {
+      "preset": "jsdoc3"
+    },
+    "checkParamNames": true,
+    "checkRedundantAccess": true,
+    "checkRedundantParams": true,
+    "checkRedundantReturns": true,
+    "enforceExistence": {
+        "allExcept": ["expressions", "exports"]
+    },
+    "leadingUnderscoreAccess": true,
+    "requireParamDescription": true,
+    "requireParamTypes": true,
+    "requireReturnTypes": true
   }
 }

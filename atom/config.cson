@@ -11,6 +11,7 @@
     hideIgnoredNames: true
   linter:
     inlineTooltipInterval: 1000
+    showErrorPanel: false
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
   "atom-ternjs": {}

@@ -38,7 +38,7 @@
 
 		// Stylistic Issues
 		"brace-style": [2, "1tbs"],
-		"camelcase": [2, "always"],
+		"camelcase": [2, {"properties": "always"}],
 
 		// ECMAScript 6
 		//

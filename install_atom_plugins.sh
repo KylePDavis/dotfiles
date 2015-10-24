@@ -71,3 +71,9 @@ turbo-javascript
 vim-mode
 EOF
 )
+
+#NOTE: eventually remove this in favor of using eslint exclusively
+# enable jscs jsdoc extension within atom
+gimme node
+cd "$HOME/.atom/"
+npm install jscs-jsdoc
