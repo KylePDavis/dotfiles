@@ -39,6 +39,8 @@
 		// Stylistic Issues
 		"brace-style": [2, "1tbs"],
 		"camelcase": [2, {"properties": "always"}],
+		"quotes": [2, "double", "avoid-escape"],
+		"require-jsdoc": 2,
 
 		// ECMAScript 6
 		//
