@@ -12,7 +12,6 @@ atom-ternjs
 atom-typescript
 atomatigit
 autocomplete-emojis
-center-screen
 change-case
 color-picker
 copy-as-rtf
@@ -60,6 +59,7 @@ open-in-sourcetree
 open-terminal-here
 pdf-view
 pigments
+pipe
 quick-highlight
 revert-buffer
 script
