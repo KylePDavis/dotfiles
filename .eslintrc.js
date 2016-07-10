@@ -1,8 +1,8 @@
-{
+module.exports = {
 
 	//TODO: reorder these based on eslint docs
 
-	"parser": "babel-eslint", // for the <3 of generator comprehensions
+	//"parser": "babel-eslint", // for the <3 of generator comprehensions
 
 	"env": {
 		"es6": true,
@@ -53,4 +53,5 @@
 		"max-statements": [2, 42],
 
 	},
-}
+
+};
