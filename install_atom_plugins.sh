@@ -28,7 +28,6 @@ language-svg
 language-viml
 linter
 linter-clang
-linter-coffeelint
 linter-cpplint
 linter-csslint
 linter-eslint
@@ -50,8 +49,6 @@ open-terminal-here
 pdf-view
 pigments
 pipe
-quick-highlight
-revert-buffer
 script
 sort-lines
 svg-preview
@@ -62,4 +59,3 @@ vim-mode
 EOF
 )
 
-gimme node
