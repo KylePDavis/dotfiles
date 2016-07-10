@@ -26,7 +26,7 @@ curl -fsSL "https://github.com/KylePDavis/dotfiles/raw/master/install.sh" | bash
   - uses [Vim-Plug][vim-plug] to automatically install and load plugins
   - tweaks colors and tabs
   - syntax checking
-  - JavaScript and CoffeeScript support
+  - JavaScript support
   - inline colors for CSS
   - gutter for VCS/SCM changes (e.g., git)
 * [Atom][atom] editor scripts
