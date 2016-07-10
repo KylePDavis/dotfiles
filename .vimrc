@@ -31,6 +31,9 @@ set foldlevelstart=99
 " coping to Mac OS X clipboard (kinda)
 vmap <C-c> :w !pbcopy<CR><CR>
 
+" no more ex mode!
+nnoremap Q <nop>
+
 " force syntax on a few file types
 autocmd BufNewFile,BufReadPost *.json set filetype=json syntax=javascript
 autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
@@ -59,10 +62,14 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-\> :NERDTreeToggle<CR>
 "TODO: detect SHIFT?: map <Shift><C-\> :NERDTreeFind<CR>
 
+Plug 'terryma/vim-multiple-cursors'  " multiple cursor support
+
+Plug 'editorconfig/editorconfig-vim'
+
 Plug 'scrooloose/syntastic'  " multi-language syntax checker
 let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors=1
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint']
 
 Plug 'ntpeters/vim-better-whitespace'  " whitespace!!
 let g:strip_whitespace_on_save = 1
@@ -95,11 +102,6 @@ let g:ConqueTerm_CloseOnEnd = 1
 Plug 'pangloss/vim-javascript'  " better JavaScript support
 
 Plug 'moll/vim-node'  " nodejs extras
-
-Plug 'sidorares/node-vim-debugger', { 'do': 'cd ~/.vim/plugged/node-vim-debugger/ && npm install' }  " nodejs debugger
-command NodeDebug call conque_term#open('node ' . expand('~/.vim/plugged/node-vim-debugger/bin/vim-inspector') . ' "' . expand('%') . '"', ['belowright split'])
-
-Plug 'kchmck/vim-coffee-script'  " CoffeeScript support
 
 Plug 'leafgarland/typescript-vim'  " TypeScript support
 autocmd QuickFixCmdPost [^l]* nested cwindow
