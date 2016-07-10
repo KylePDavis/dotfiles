@@ -27,9 +27,7 @@ link "$CMD_DIR/.profile" "$HOME/.bash_profile" # certain scenarios use this one
 
 link "$CMD_DIR/.vimrc" "$HOME/.vimrc"
 
-link "$CMD_DIR/.eslintrc" "$HOME/.eslintrc"
-link "$CMD_DIR/.jshintrc" "$HOME/.jshintrc"
-link "$CMD_DIR/.jscsrc" "$HOME/.jscsrc"
+link "$CMD_DIR/.eslintrc.js" "$HOME/.eslintrc.js"
 link "$CMD_DIR/.node-inspectorrc" "$HOME/.node-inspectorrc"
 
 mkdir -p "$HOME/.atom"
