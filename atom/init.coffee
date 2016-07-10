@@ -11,4 +11,5 @@
 #     console.log "Saved! #{editor.getPath()}"
 
 process.env.PATH += ':' + process.env.HOME + '/homebrew/bin/'
+process.env.PATH += ':/usr/local/bin'
 process.env.GOPATH = process.env.HOME + '/go'
