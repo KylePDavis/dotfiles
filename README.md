@@ -13,6 +13,7 @@ This also serves as a tool for getting new Mac OS X and Linux systems setup in a
 ```bash
 curl -fsSL "https://github.com/KylePDavis/dotfiles/raw/master/install.sh" | bash -
 ```
+_(you do read these scripts, right?)_
 
 
 
