@@ -10,10 +10,10 @@ export PATH="$PATH:$HOME/bin"
 # Homebrew
 export PATH="$PATH:$HOME/homebrew/bin"
 BREW_BIN=$(which brew)
-BREW_PREFIX=$(which brew &>/dev/null  &&  brew --prefix  || echo "")
+BREW_PREFIX=$(which brew &>/dev/null  &&  brew --prefix  ||  echo "")
 if [ "$BREW_BIN" ]; then
 	export PYTHONPATH="$BREW_PREFIX/lib/python2.7/site-packages/"  # also facilitates:  easy_install -d "$PYTHONPATH" awesome_pkg
-	export HOMEBREW_CASK_OPTS="--caskroom=$BREW_PREFIX/Caskroom --binarydir=$BREW_PREFIX/bin"
+	export HOMEBREW_CASK_OPTS="--caskroom=$BREW_PREFIX/Caskroom"
 fi
 
 # Default editor
@@ -22,7 +22,7 @@ export EDITOR="vim"
 # Help things find Google Chrome
 if [ "$OS" = "Darwin" ]; then
 	CHROME_BIN="$HOME/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-	! [ -f "$CHROME_BIN" ] || export CHROME_BIN
+	! [ -f "$CHROME_BIN" ]  ||  export CHROME_BIN
 fi
 
 # Configure go lang
