@@ -13,7 +13,7 @@ BREW_BIN=$(which brew)
 BREW_PREFIX=$(which brew &>/dev/null  &&  brew --prefix  ||  echo "")
 if [ "$BREW_BIN" ]; then
 	export PYTHONPATH="$BREW_PREFIX/lib/python2.7/site-packages/"  # also facilitates:  easy_install -d "$PYTHONPATH" awesome_pkg
-	export HOMEBREW_CASK_OPTS="--caskroom=$BREW_PREFIX/Caskroom"
+	export HOMEBREW_CASK_OPTS="--caskroom=$BREW_PREFIX/Caskroom --appdir=$HOME/Applications"
 fi
 
 # Default editor
