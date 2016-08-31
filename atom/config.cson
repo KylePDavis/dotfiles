@@ -1,18 +1,24 @@
 "*":
+  "atom-ternjs": {}
+  "atom-typescript": {}
+  core:
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
   editor:
-    fontSize: 13
+    fontSize: 12
     invisibles: {}
+    scrollPastEnd: true
     showIndentGuide: true
     softTabs: false
     tabLength: 4
-    scrollPastEnd: true
-  "tree-view":
-    hideVcsIgnoredFiles: true
-    hideIgnoredNames: true
   linter:
     inlineTooltipInterval: 1000
     showErrorPanel: false
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
-  "atom-ternjs": {}
-  core: {}
+  "linter-flow": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
