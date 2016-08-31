@@ -31,21 +31,89 @@ atom-text-editor::shadow .cursor {
   // border-color: red;
 }
 
+// MY STYLES
+
 atom-ternjs-type {
     border: 1px solid rgba(116, 124, 128, 0.9);
-    // background: rgba(240, 248, 252, 0.9); // for light themes
-    background: rgba(42, 63, 75, 0.9);       // for dark themes
+    background: rgba(240, 248, 252, 0.9);       // for light themes
+    // background: rgba(42, 63, 75, 0.9);       // for dark themes
 }
 
-.term2 .terminal {
-    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
-    -webkit-font-smoothing: none;
-    background: rgba(0, 0, 0, 0.9);
+atom-pane {
+    .term3 .terminal {
+        font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
+        -webkit-font-smoothing: none;
+        opacity: 0.8;
+        -webkit-filter: sepia(25%);
+    }
+    &.active .term3 .terminal {
+        opacity: 1.0;
+        -webkit-filter: none;
+    }
 }
+
+// make only active pane
+// atom-pane {
+//     opacity: 0.8;
+//     &.active {
+//         opacity: 1.0;
+//     }
+// }
 
 atom-notifications {
     opacity: 0.7;
 }
 atom-notifications:hover {
     opacity: 1.0;
+}
+
+#linter-inline {
+    //TODO: dark theme
+    //TODO: make light theme more like the ternjs one
+    background: rgba(160, 160, 160, 1);       // for light themes
+    border: 1px solid rgba(42, 63, 75, 0.5);
+    opacity: 0.2;
+    &:hover {
+        opacity: 1.0;
+    }
+    linter-message {
+        .badge {
+            border: 1px solid rgba(42, 63, 75, 0.3);
+            color: white;
+        }
+        text-shadow: 0 0 2px rgba(42, 63, 75, 0.7);
+    }
+}
+
+atom-panel.modal.overlay.from-top:after {
+    // background:rgba(.3,.3,.3,.3);
+    background: radial-gradient(at 50% 5%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+    // -webkit-backdrop-filter: blur(5px); /*TODO: enable experimental*/
+}
+
+// @keyframes pulsating {
+//     0% {
+//         opacity:1.0;
+//     }
+//     50% {
+//         opacity:0.8;
+//     }
+// }
+// animation: pulsating 10s steps(500) infinite alternate;
+// animation: pulsating 10s steps(50) infinite alternate;
+
+atom-text-editor::shadow .cursor {
+
+    .variable.language {
+        opacity: 0.6;
+    }
+
+    // .variable.other.property.js {
+    //     color: grey;
+    // }
+    //
+    // .variable.other.object.js {
+    //     color: #e5c07b;
+    // }
+
 }
