@@ -13,3 +13,6 @@
 process.env.PATH += ':' + process.env.HOME + '/homebrew/bin/'
 process.env.PATH += ':/usr/local/bin'
 process.env.GOPATH = process.env.HOME + '/go'
+
+# Remove problematic environment variables that interfere with sub-shells
+delete process.env[k] for k of process.env when k.startsWith('BASH_FUNC_')
