@@ -1,6 +1,0 @@
-{
-	"preload": false,
-	"save-live-edit": true,
-	"stack-trace-limit": 50,
-	"web-port": "54321"
-}

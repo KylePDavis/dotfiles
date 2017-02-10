@@ -28,7 +28,6 @@ link "$CMD_DIR/.profile" "$HOME/.bash_profile" # certain scenarios use this one
 link "$CMD_DIR/.vimrc" "$HOME/.vimrc"
 
 link "$CMD_DIR/.eslintrc.js" "$HOME/.eslintrc.js"
-link "$CMD_DIR/.node-inspectorrc" "$HOME/.node-inspectorrc"
 
 mkdir -p "$HOME/.atom"
 for F in "$CMD_DIR/atom/"*; do
