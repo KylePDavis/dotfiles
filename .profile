@@ -71,6 +71,9 @@ export GREP_OPTIONS="--color --exclude-dir=.svn --exclude-dir=.git --exclude-dir
 # color diffs
 ! which colordiff &>/dev/null  ||  alias diff="colordiff"
 
+# color json
+! which json &>/dev/null  ||  alias json="json -o inspect"
+
 # MacVim shell aliases
 if [ "$OS" = "Darwin" ]; then
 	alias gvim="mvim"
