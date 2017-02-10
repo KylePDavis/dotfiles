@@ -16,3 +16,5 @@ process.env.GOPATH = process.env.HOME + '/go'
 
 # Remove problematic environment variables that interfere with sub-shells
 delete process.env[k] for k of process.env when k.startsWith('BASH_FUNC_')
+# Ensure LANG is set for subprocesses
+process.env.LANG = 'en_US.UTF-8' unless process.env.LANG
