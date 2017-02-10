@@ -17,10 +17,10 @@
     softTabs: false
     tabLength: 4
   linter:
-    inlineTooltipInterval: 1000
+    inlineTooltipInterval: 500
     showErrorPanel: false
   "linter-eslint":
-    disableWhenNoEslintrcFileInPath: true
+    disableWhenNoEslintConfig: true
   "linter-flow": {}
   "tree-view":
     hideIgnoredNames: true
