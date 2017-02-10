@@ -26,6 +26,8 @@ highlight-selected
 language-diff
 language-svg
 language-viml
+language-nginx
+language-apache
 linter
 linter-clang
 linter-cpplint
@@ -34,10 +36,11 @@ linter-eslint
 linter-javac
 linter-js-yaml
 linter-less
-linter-pep8
+linter-pycodestyle
 linter-perl
 linter-pylint
 linter-sass-lint
+linter-stylelint
 linter-shellcheck
 linter-tslint
 linter-write-good
@@ -55,7 +58,7 @@ svg-preview
 term3
 trailing-spaces
 turbo-javascript
-vim-mode
+vim-mode-plus
 EOF
 )
 

@@ -1,7 +1,10 @@
 "*":
   "atom-ternjs": {}
   "atom-typescript": {}
+  "autocomplete-python":
+    useKite: false
   core:
+    telemetryConsent: "limited"
     themes: [
       "one-light-ui"
       "one-light-syntax"
