@@ -26,8 +26,8 @@ atom-text-editor {
   // background-color: hsl(180, 24%, 12%);
 }
 
-// To style other content in the text editor's shadow DOM, use the ::shadow expression
-atom-text-editor::shadow .cursor {
+// style UI elements inside atom-text-editor
+atom-text-editor .cursor {
   // border-color: red;
 }
 
@@ -85,6 +85,12 @@ atom-notifications:hover {
     }
 }
 
+autocomplete-suggestion-list .suggestion-description .suggestion-description-content {
+    display: block;
+    overflow: scroll;
+    max-height: 20em;
+}
+
 atom-panel.modal.overlay.from-top:after {
     // background:rgba(.3,.3,.3,.3);
     background: radial-gradient(at 50% 5%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
@@ -102,18 +108,10 @@ atom-panel.modal.overlay.from-top:after {
 // animation: pulsating 10s steps(500) infinite alternate;
 // animation: pulsating 10s steps(50) infinite alternate;
 
-atom-text-editor::shadow .cursor {
+atom-text-editor.editor .cursor {
 
-    .variable.language {
+	.syntax--variable.syntax--language {
         opacity: 0.6;
     }
-
-    // .variable.other.property.js {
-    //     color: grey;
-    // }
-    //
-    // .variable.other.object.js {
-    //     color: #e5c07b;
-    // }
 
 }
