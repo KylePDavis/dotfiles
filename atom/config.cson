@@ -16,9 +16,7 @@
     showIndentGuide: true
     softTabs: false
     tabLength: 4
-  linter:
-    inlineTooltipInterval: 500
-    showErrorPanel: false
+  linter: {}
   "linter-eslint":
     disableWhenNoEslintConfig: true
   "linter-flow": {}
