@@ -4,16 +4,22 @@
 
 OS=$(uname -s)
 
-# Add $HOME/bin to PATH
-export PATH="$PATH:$HOME/bin"
+# Add user-specific bin dirs to PATH
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
+
+# Setup user-specific Python overrides
+if [ "$OS" = "Darwin" ]; then
+	export PATH="$HOME/Library/Python/2.7/bin:$PATH:$HOME/bin"
+fi
 
 # Homebrew
-export PATH="$PATH:$HOME/homebrew/bin"
-BREW_BIN=$(which brew)
-BREW_PREFIX=$(which brew &>/dev/null  &&  brew --prefix  ||  echo "")
-if [ "$BREW_BIN" ]; then
-	export PYTHONPATH="$BREW_PREFIX/lib/python2.7/site-packages/"  # also facilitates:  easy_install -d "$PYTHONPATH" awesome_pkg
-	export HOMEBREW_CASK_OPTS="--caskroom=$BREW_PREFIX/Caskroom --appdir=$HOME/Applications"
+if [ "$OS" = "Darwin" ]; then
+	export PATH="$PATH:$HOME/homebrew/bin"
+	BREW_BIN=$(which brew)
+	BREW_PREFIX=$(which brew &>/dev/null  &&  brew --prefix  ||  echo "")
+	if [ "$BREW_BIN" ]; then
+		export HOMEBREW_CASK_OPTS="--caskroom=$BREW_PREFIX/Caskroom --appdir=$HOME/Applications"
+	fi
 fi
 
 # Default editor
