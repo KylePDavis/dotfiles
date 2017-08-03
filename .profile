@@ -18,7 +18,8 @@ if [ "$OS" = "Darwin" ]; then
 	BREW_BIN=$(which brew)
 	BREW_PREFIX=$(which brew &>/dev/null  &&  brew --prefix  ||  echo "")
 	if [ "$BREW_BIN" ]; then
-		export HOMEBREW_CASK_OPTS="--caskroom=$BREW_PREFIX/Caskroom --appdir=$HOME/Applications"
+		export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications --require-sha"
+		export HOMEBREW_NO_INSECURE_REDIRECT=1
 	fi
 fi
 
