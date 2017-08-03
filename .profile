@@ -73,7 +73,7 @@ alias l="ls -CF"
 alias la="ls -A"
 alias ll="ls -alF"
 alias tree="tree -CF"
-export GREP_OPTIONS="--color --exclude-dir=.svn --exclude-dir=.git --exclude-dir=node_modules"
+alias grep="grep --color --exclude-dir=.svn --exclude-dir=.git --exclude-dir=node_modules"
 
 # color diffs
 ! which colordiff &>/dev/null  ||  alias diff="colordiff"
