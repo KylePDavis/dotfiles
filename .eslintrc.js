@@ -4,9 +4,21 @@ module.exports = {
 
 	//"parser": "babel-eslint", // for the <3 of generator comprehensions
 
+	"parserOptions": {
+		"ecmaVersion": 2017,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"globalReturn": false,
+			"impliedStrict": true,
+			"jsx": true,
+			"experimentalObjectRestSpread": true,
+		},
+	},
+
 	"env": {
-		"es6": true,
+		"browser": true,
 		"node": true,
+		"es6": true,
 		"mocha": true,
 		"jquery": true,
 	},
