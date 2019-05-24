@@ -154,7 +154,9 @@ fi
 if [ "$TERM_PROGRAM" = "vscode" ]; then
 
 	# patch to restore some of the option as meta escape key in VS Code on Mac
-	bindkey "≥" insert-last-word
+	if [ "$ZSH_VERSION" ]; then
+		bindkey "≥" insert-last-word
+	fi
 
 	# detect if in a fully resolved HOME path and cd back to the shorter version
 	if [ "$PWD" != "$HOME" ]; then
