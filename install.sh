@@ -47,3 +47,12 @@ if ! [[ -d "$HOME/.atom/packages/" ]]; then
 		echo "# WARN: 2. Install the atom plugins using \"$CMD_DIR/install_atom_plugins.sh\""
 	fi
 fi
+
+OS=$(uname -s)
+if [ "$OS" = "Darwin" ]; then
+	# Enable "All Controls" for tab in SystemPreferences->Keyboard->Shortcuts
+	defaults write -globalDomain AppleKeyboardUIMode -int 3
+	# Setup things for SystemPreferences->Keyboard->Shortcuts->App Shortcuts
+	defaults write -globalDomain NSUserKeyEquivalents -dict \
+		'\033Window\033Zoom' '@~^m'
+fi
