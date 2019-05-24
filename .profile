@@ -149,4 +149,4 @@ fi
 
 # gimme gimme
 [ -d "$HOME/.gimme" ]  ||  curl -fsSL "https://github.com/KylePDavis/gimme/raw/master/gimme" | bash -
-F="$HOME/.gimme/gimme";  ! [ -f "$F" ]  ||  source "$F"
+#F="$HOME/.gimme/gimme";  ! [ -f "$F" ]  ||  source "$F"
