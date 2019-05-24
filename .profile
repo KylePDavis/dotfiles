@@ -150,3 +150,20 @@ fi
 # gimme gimme
 [ -d "$HOME/.gimme" ]  ||  curl -fsSL "https://github.com/KylePDavis/gimme/raw/master/gimme" | bash -
 #F="$HOME/.gimme/gimme";  ! [ -f "$F" ]  ||  source "$F"
+
+# The VS Code terminal needs a few tweaks
+if [ "$TERM_PROGRAM" = "vscode" ]; then
+
+	# patch to restore some of the option as meta escape key in VS Code on Mac
+	bindkey "≥" insert-last-word
+
+	# detect if in a fully resolved HOME path and cd back to the shorter version
+	if [ "$PWD" != "$HOME" ]; then
+		ABS_HOME="$(cd "$HOME" && pwd -P)"
+		if [ "$ABS_HOME" != "$HOME" ]; then
+			if [[ "$PWD" =~ $ABS_HOME* ]]; then
+				cd "$HOME${PWD##$ABS_HOME}" || :
+			fi
+		fi
+	fi
+fi
