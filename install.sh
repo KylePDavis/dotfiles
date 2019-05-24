@@ -1,8 +1,11 @@
 #!/bin/bash
 set -o errexit -o pipefail
 
-# support curl|bash
-if [[ "$0" =~ [-]?bash ]] && ! [[ "$BASH_SOURCE" ]]; then
+# support piping directly into curl
+if [[ "$ZSH_VERSION" ]]; then
+	setopt posixargzero
+fi
+if [[ "$0" =~ -?(z|ba)sh && ! "${BASH_SOURCE[*]}" ]]; then
 	git clone "https://github.com/KylePDavis/dotfiles" "$HOME/.dotfiles"
 	exec "$HOME/.dotfiles/install.sh"
 fi
@@ -21,8 +24,9 @@ link() {
 	fi
 }
 
-link "$CMD_DIR/.profile" "$HOME/.profile" # Mac
-link "$CMD_DIR/.profile" "$HOME/.bashrc" # Linux
+link "$CMD_DIR/.profile" "$HOME/.profile"
+link "$CMD_DIR/.profile" "$HOME/.zshrc"
+link "$CMD_DIR/.profile" "$HOME/.bashrc"
 link "$CMD_DIR/.profile" "$HOME/.bash_profile" # certain scenarios use this one
 
 link "$CMD_DIR/.vimrc" "$HOME/.vimrc"
