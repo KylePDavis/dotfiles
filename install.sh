@@ -40,7 +40,7 @@ for F in "$CMD_DIR/atom/"*; do
 done
 if ! [[ -d "$HOME/.atom/packages/" ]]; then
 	if which apm &>/dev/null; then
-		"$CMD_DIR/install_atom_plugins.sh"
+		echo "# INFO: If you use Atom then you may want to run \"$CMD_DIR/install_atom_plugins.sh\""
 	else
 		echo "# WARN: Unable to find Atom's \"apm\" command."
 		echo "# WARN: 1. Get Atom from the website or automatically using \"gimme atom\""
