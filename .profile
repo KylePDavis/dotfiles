@@ -97,14 +97,6 @@ if [ "$OS" = "Darwin" ]; then
 	alias gvim="mvim"
 fi
 
-# tab completion FTW
-if [ "$OS" = "Darwin" ]; then
-	F="$BREW_PREFIX/etc/bash_completion";  ! [ -f "$F" ]  ||  source "$F"
-	#F="$(xcode-select -p)/usr/share/git-core/git-completion.$SHELL_NAME";  ! [ -f "$F" ]  ||  source "$F"
-else
-	F="/etc/bash_completion";  ! [ -f "$F" ]  ||  source "$F"
-fi
-
 # fancy shell prompts
 if [ "$ZSH_VERSION" ]; then
 
@@ -144,6 +136,13 @@ if [ "$ZSH_VERSION" ]; then
 	# ensure proper ls-style colors in completion
 	zstyle ':completion:*' list-colors 'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 else
+	# tab completion FTW
+	if [ "$OS" = "Darwin" ]; then
+		F="$BREW_PREFIX/etc/bash_completion";  ! [ -f "$F" ]  ||  source "$F"
+		F="$(xcode-select -p)/usr/share/git-core/git-completion.$SHELL_NAME";  ! [ -f "$F" ]  ||  source "$F"
+	else
+		F="/etc/bash_completion";  ! [ -f "$F" ]  ||  source "$F"
+	fi
 	F="$HOME/.liquidprompt/liquidprompt";  ! [ -f "$F" ]  ||  source "$F"
 fi
 
