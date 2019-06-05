@@ -100,7 +100,9 @@ fi
 # fancy shell prompts
 if [ "$ZSH_VERSION" ]; then
 
-	ANTIGEN_BIN="$HOME/.antigen.zsh"
+	ANTIGEN_DIR="$HOME/.antigen"
+	[ -d "$ANTIGEN_DIR" ] || mkdir "$ANTIGEN_DIR"
+	ANTIGEN_BIN="$ANTIGEN_DIR/antigen.zsh"
 	[ -f "$ANTIGEN_BIN" ] || curl -L git.io/antigen > "$ANTIGEN_BIN"
 	source "$ANTIGEN_BIN"
 
