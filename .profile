@@ -78,6 +78,8 @@ if [ "$OS" = "Darwin" ]; then
 	export CLICOLOR=1
 else
 	alias ls="ls --color=auto"
+	alias pbcopy="xclip -selection clipboard"
+	alias pbpaste="xclip -selection clipboard -o"
 fi
 alias la="ls -Fa"
 alias ll="ls -Fla"
