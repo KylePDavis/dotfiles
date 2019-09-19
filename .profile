@@ -87,6 +87,7 @@ alias l="ls -FC"
 alias d="l"
 alias tree="tree -CF"
 alias grep="grep --color --exclude-dir={.svn,.git,node_modules}"
+alias node-print="node -p -e 'require(path.resolve(process.argv[1]))'"
 
 # color diffs
 ! command -v colordiff &>/dev/null  ||  alias diff="colordiff"
