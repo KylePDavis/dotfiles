@@ -54,5 +54,9 @@ if [ "$OS" = "Darwin" ]; then
 	defaults write -globalDomain AppleKeyboardUIMode -int 3
 	# Setup things for SystemPreferences->Keyboard->Shortcuts->App Shortcuts
 	defaults write -globalDomain NSUserKeyEquivalents -dict \
-		'\033Window\033Zoom' '@~^m'
+		'\033Window\033Zoom' '@~^m' \
+		'\033Window\033Move Window to Left Side of Screen' '@~^\U2190' \
+		'\033Window\033Move Window to Right Side of Screen' '@~^\U2192' \
+		'\033Window\033Tile Window to Left of Screen' '@~^$\U2190' \
+		'\033Window\033Tile Window to Right of Screen' '@~^$\U2192'
 fi
