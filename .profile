@@ -87,7 +87,7 @@ alias l="ls -FC"
 alias d="l"
 alias tree="tree -CF"
 alias grep="grep --color --exclude-dir={.svn,.git,node_modules}"
-alias node-print="node -p -e '(process.argv[2]||\"\").split(\".\").filter(Boolean).reduce((o,k)=>o[k],require(path.resolve(process.argv[1])))'"
+alias node-print="node -p -e 'l=(a=process.argv.slice(2)).length; o=require(path.resolve(process.argv[1])); pl=l>0?a.map(s=>s.split(\".\")):[[]]; r=pl.map(p=>p.reduce((o,k)=>o[k],o)); l?r:r[0]'"
 
 # color diffs
 ! command -v colordiff &>/dev/null  ||  alias diff="colordiff"
