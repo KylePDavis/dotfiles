@@ -5,13 +5,11 @@ module.exports = {
 	//"parser": "babel-eslint", // for the <3 of generator comprehensions
 
 	"parserOptions": {
-		"ecmaVersion": 2017,
+		"ecmaVersion": 2018,
 		"sourceType": "module",
 		"ecmaFeatures": {
-			"globalReturn": false,
 			"impliedStrict": true,
 			"jsx": true,
-			"experimentalObjectRestSpread": true,
 		},
 	},
 
@@ -20,7 +18,6 @@ module.exports = {
 		"node": true,
 		"es6": true,
 		"mocha": true,
-		"jquery": true,
 	},
 
 	"rules": {
@@ -43,20 +40,19 @@ module.exports = {
 		"strict": [2, "global"],
 
 		// Variables
-		//
+		// …
 
 		// Node.js
-		//no-sync ? ? ?
+		// …
 
 		// Stylistic Issues
 		"brace-style": [2, "1tbs"],
-		"camelcase": [2, {"properties": "always"}],
-		"quotes": [2, "double", "avoid-escape"],
+		"camelcase": [2, { "properties": "always" }],
+		"quotes": [2, "double", "avoidEscape"],
 		"require-jsdoc": 2,
 
 		// ECMAScript 6
-		//
-
+		// …
 
 		// Legacy
 		"max-depth": [2, 7],
