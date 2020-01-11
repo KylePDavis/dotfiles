@@ -24,29 +24,21 @@ link() {
 	fi
 }
 
-link "$CMD_DIR/.profile" "$HOME/.profile"
+FILES="
+	.profile
+	.vimrc
+	.eslintrc.js
+	.irbrc
+"
+
+for FILE in $FILES; do
+	link "$CMD_DIR/$FILE" "$HOME/"
+done
+
+# extra links for .profile
 link "$CMD_DIR/.profile" "$HOME/.zshrc"
 link "$CMD_DIR/.profile" "$HOME/.bashrc"
 link "$CMD_DIR/.profile" "$HOME/.bash_profile" # certain scenarios use this one
-
-link "$CMD_DIR/.vimrc" "$HOME/.vimrc"
-
-link "$CMD_DIR/.eslintrc.js" "$HOME/.eslintrc.js"
-
-mkdir -p "$HOME/.atom"
-for F in "$CMD_DIR/atom/"*; do
-	FN=${F##*/}
-	link "$CMD_DIR/atom/$FN" "$HOME/.atom/$FN"
-done
-if ! [[ -d "$HOME/.atom/packages/" ]]; then
-	if which apm &>/dev/null; then
-		echo "# INFO: If you use Atom then you may want to run \"$CMD_DIR/install_atom_plugins.sh\""
-	else
-		echo "# WARN: Unable to find Atom's \"apm\" command."
-		echo "# WARN: 1. Get Atom from the website or automatically using \"gimme atom\""
-		echo "# WARN: 2. Install the atom plugins using \"$CMD_DIR/install_atom_plugins.sh\""
-	fi
-fi
 
 OS=$(uname -s)
 if [ "$OS" = "Darwin" ]; then
