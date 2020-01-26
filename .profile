@@ -87,8 +87,8 @@ alias l="ls -FC"
 alias d="l"
 alias tree="tree -CF"
 alias grep="grep --color --exclude-dir={.svn,.git,node_modules}"
-alias node-print="node -p -e 'const [,f=\".\",e=\"this\"]=process.argv; (function(){ with(this) return eval(e); }).call(require(path.resolve(f)))'"
-alias ts-node-print="TS_NODE_FILES=true node -r ts-node/register -p -e 'const [,f=\".\",e=\"this\"]=process.argv; (function(){ with(this) return eval(e); }).call(require(path.resolve(f)))'"
+alias node-print="node -e 'const [,f=\".\",e=\"this\"]=process.argv; eval(\"(async function(){ with(this) return (\"+e+\"); })\").call(require(path.resolve(f))).then(console.log)'"
+alias ts-node-print="TS_NODE_FILES=true node -r ts-node/register -e 'const [,f=\".\",e=\"this\"]=process.argv; eval(\"(async function(){ with(this) return (\"+e+\"); })\").call(require(path.resolve(f))).then(console.log)'"
 
 # color diffs
 ! command -v colordiff &>/dev/null  ||  alias diff="colordiff"
