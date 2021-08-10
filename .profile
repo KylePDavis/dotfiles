@@ -113,8 +113,7 @@ if [ "$ZSH_VERSION" ]; then
 	BUNDLES=(
 		zsh-users/zsh-syntax-highlighting
 		mafredri/zsh-async
-		sindresorhus/pure
-		ael-code/zsh-colored-man-pages
+		sindresorhus/pure@main
 	)
 	for B in ${=BUNDLES}; do
 		antigen bundle "$B"
