@@ -87,6 +87,7 @@ alias l="ls -FC"
 alias d="l"
 alias tree="tree -CF"
 alias grep="grep --color --exclude-dir={.svn,.git,node_modules}"
+alias man='LESS_TERMCAP_md=$(tput bold; tput setaf 4) LESS_TERMCAP_me=$(tput sgr0) LESS_TERMCAP_mb=$(tput blink) LESS_TERMCAP_us=$(tput setaf 2) LESS_TERMCAP_ue=$(tput sgr0) LESS_TERMCAP_so=$(tput smso) LESS_TERMCAP_se=$(tput rmso) PAGER="${commands[less]:-$PAGER}" man'
 alias node-print="node -e 'let [,f=\".\",e=\"this\"]=process.argv,ctx; try{ctx=require(f)}catch{ctx=require(path.resolve(f))}; eval(\`(async function(){ with(this) return (\${e}); })\`).call(ctx).then(console.log,console.error)'"
 alias ts-node-print="TS_NODE_FILES=true node -r ts-node/register -e 'let [,f=\".\",e=\"this\"]=process.argv,ctx; try{ctx=require(f)}catch{ctx=require(path.resolve(f))} eval(\`(async function(){ with(this) return (\${e}); })\`).call(ctx).then(console.log,console.error)'"
 
