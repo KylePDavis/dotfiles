@@ -32,7 +32,7 @@ set foldlevelstart=99
 vmap <C-c> :w !pbcopy<CR><CR>
 
 " no more ex mode!
-nnoremap Q <nop>
+nmap Q <nop>
 
 " force syntax on a few file types
 autocmd BufNewFile,BufReadPost *.json set filetype=json syntax=javascript
