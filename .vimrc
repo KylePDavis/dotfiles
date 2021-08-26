@@ -28,8 +28,12 @@ imap <S-Tab> <Esc><<i
 set foldmethod=syntax
 set foldlevelstart=99
 
-" coping to Mac OS X clipboard (kinda)
-vmap <C-c> :w !pbcopy<CR><CR>
+" simplify working with the system clipboard
+vmap <C-c> "+y
+nmap <C-c> V"+y
+vmap <C-x> "+x
+nmap <C-x> V"+x
+imap <C-v> <Esc>"+Pi
 
 " no more ex mode!
 nmap Q <nop>
