@@ -40,12 +40,11 @@ nmap Q <nop>
 
 " force syntax on a few file types
 autocmd BufNewFile,BufReadPost *.json set filetype=json syntax=javascript
-autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.go set filetype=go
 
-" run js-beautify with the = key
-autocmd FileType javascript setlocal equalprg=js-beautify\ -q\ -t\ -w\ 140\ -f\ -
+" run prettier with the = key
+autocmd FileType * setlocal equalprg=npx\ -q\ prettier\ --stdin-filepath\ %
 
 " VIM-PLUG PLUGINS (WITH FIRST-RUN AUTOINSTALL)
 if empty(glob('~/.vim/autoload/plug.vim'))
