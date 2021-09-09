@@ -20,6 +20,10 @@ if [ "$OS" = "Darwin" ]; then
 		BREW_PREFIX=$(brew --prefix)
 		export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications --require-sha"
 		export HOMEBREW_NO_INSECURE_REDIRECT=1
+		# help build tools find all the brew-based bits
+		export CFLAGS="-I$BREW_PREFIX/include/"
+		export CXXFLAGS="-I$BREW_PREFIX/include/"
+		export LDFLAGS="-L$BREW_PREFIX/lib/"
 	fi
 fi
 
