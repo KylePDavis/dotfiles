@@ -180,7 +180,7 @@ if [ "$TERM_PROGRAM" = "vscode" ]; then
 		ABS_HOME="$(cd "$HOME" && pwd -P)"
 		if [ "$ABS_HOME" != "$HOME" ]; then
 			if [[ "$PWD" =~ $ABS_HOME* ]]; then
-				cd "$HOME${PWD##$ABS_HOME}" || :
+				cd "$HOME${PWD##"$ABS_HOME"}" || :
 			fi
 		fi
 	fi
