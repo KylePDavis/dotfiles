@@ -116,6 +116,17 @@ fi
 # fancy shell prompts
 if [ "$ZSH_VERSION" ]; then
 
+	if [ "$OS" = "Darwin" ]; then
+		# Enable zsh completions from brew
+		ZSH_SITE_FUNC_DIR="$BREW_PREFIX/share/zsh/site-functions"
+		FPATH="$ZSH_SITE_FUNC_DIR:$FPATH"
+
+		# Auto fetch some community completions
+		for ID in _yarn; do
+			[ -f "$ZSH_SITE_FUNC_DIR/$ID" ] || curl -s -o "$ZSH_SITE_FUNC_DIR/$ID" "https://raw.githubusercontent.com/zsh-users/zsh-completions/master/src/$ID"
+		done
+	fi
+
 	ANTIGEN_DIR="$HOME/.antigen"
 	[ -d "$ANTIGEN_DIR" ] || mkdir "$ANTIGEN_DIR"
 	ANTIGEN_BIN="$ANTIGEN_DIR/antigen.zsh"
