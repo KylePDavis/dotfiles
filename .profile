@@ -99,6 +99,7 @@ alias vi=vim
 # aliases for node
 alias node-print="node -e 'let [,f=\".\",e=\"this\"]=process.argv,ctx; try{ctx=require(f)}catch{ctx=require(path.resolve(f))}; eval(\`(async function(){ with(this) return (\${e}); })\`).call(ctx).then(console.log,e=>{console.error(e);process.exit(1)})'"
 alias node-print-json="node -e 'let [,f=\".\",e=\"this\"]=process.argv,ctx; try{ctx=require(f)}catch{ctx=require(path.resolve(f))}; eval(\`(async function(){ with(this) return (\${e}); })\`).call(ctx).then(o=>console.log(JSON.stringify(o,null,2)),e=>{console.error(e);process.exit(1)})'"
+alias node-print-table="node -e 'let [,f=\".\",e=\"this\"]=process.argv,ctx; try{ctx=require(f)}catch{ctx=require(path.resolve(f))}; eval(\`(async function(){ with(this) return (\${e}); })\`).call(ctx).then(console.table,e=>{console.error(e);process.exit(1)})'"
 alias node-print-deep="node -e 'let [,f=\".\",e=\"this\"]=process.argv,ctx; try{ctx=require(f)}catch{ctx=require(path.resolve(f))}; eval(\`(async function(){ with(this) return (\${e}); })\`).call(ctx).then(o=>console.log(require(\"util\").inspect(o,{depth:process.env.DEPTH||Infinity})),e=>{console.error(e);process.exit(1)})'"
 alias node-print-repl="node -e 'let [,f=\".\",e=\"this\"]=process.argv,ctx; try{ctx=require(f)}catch{ctx=require(path.resolve(f))}; eval(\`(async function(){ with(this) return (\${e}); })\`).call(ctx).then((r)=>(console.log(r,\`\n = \\\$1\`),repl.start().context.\$1=r),e=>{console.error(e);process.exit(1)})'"
 alias env-ts-node="TS_NODE_FILES=true NODE_OPTIONS=\"-r ts-node/register \$NODE_OPTIONS\""
