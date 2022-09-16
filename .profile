@@ -9,7 +9,9 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
 # Setup user-specific Python overrides
 if [ "$OS" = "Darwin" ]; then
-	export PATH="$HOME/Library/Python/2.7/bin:$PATH:$HOME/bin"
+	for PY_DIR in "$HOME/Library/Python/"*/; do
+		export PATH="$PY_DIR/bin:$PATH"
+	done
 fi
 
 # Homebrew
