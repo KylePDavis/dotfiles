@@ -123,4 +123,6 @@ Plug 'leafgarland/typescript-vim'  " TypeScript support
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
