@@ -43,8 +43,11 @@ autocmd BufNewFile,BufReadPost *.json set filetype=json syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.go set filetype=go
 
-" run prettier with the = key
-autocmd FileType * setlocal equalprg=npx\ -q\ prettier\ --stdin-filepath\ %
+" prefer ripgrep if available
+if executable('rg')
+	set grepprg=rg\ --vimgrep\ $*
+	set grepformat^=%f:%l:%c:%m
+endif
 
 " VIM-PLUG PLUGINS (WITH FIRST-RUN AUTOINSTALL)
 if empty(glob('~/.vim/autoload/plug.vim'))
