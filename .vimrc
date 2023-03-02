@@ -66,30 +66,29 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin()
 
-Plug 'bling/vim-airline'  " more helpful tab line and status lines with colors
+Plug 'tpope/vim-commentary'  " comment stuff out
+
+Plug 'vim-airline/vim-airline'  " more helpful tab line and status lines with colors
 let g:airline#extensions#tabline#enabled = !has('gui_running')
 let g:airline#extensions#tabline#show_buffers = 0
 set laststatus=2
 set ttimeoutlen=50
-"TODO: decide if I care enough for:  https://github.com/Lokaltog/powerline-fonts
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }  " tree file browser
-map <C-n> :NERDTreeToggle<CR>
+Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }  " tree file browser
 map <C-\> :NERDTreeToggle<CR>
 "TODO: detect SHIFT?: map <Shift><C-\> :NERDTreeFind<CR>
 
-Plug 'terryma/vim-multiple-cursors'  " multiple cursor support
+Plug 'mg979/vim-visual-multi'  " multiple cursor support
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'scrooloose/syntastic'  " multi-language syntax checker
+Plug 'vim-syntastic/syntastic'  " multi-language syntax checker
 let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors=1
 let g:syntastic_javascript_checkers = ['eslint']
 
 Plug 'ntpeters/vim-better-whitespace'  " whitespace!!
 let g:strip_whitespace_on_save = 1
-let g:better_whitespace_filetypes_blacklist=['conque_term']
 
 Plug 'nathanaelkane/vim-indent-guides'  " pretty indent guides with softtabs
 let g:indent_guides_guide_size = 1
@@ -100,9 +99,10 @@ autocmd VimEnter * :IndentGuidesEnable
 
 Plug 'lilydjwg/colorizer'  " colorize CSS inline
 
-Plug 'kien/ctrlp.vim'  " fuzzy file matcher / opener
-let g:ctrlp_user_command="find '%s' ! -wholename '*/.git/*' ! -wholename '*/node_modules/*' ! -wholename '*/report/*' -type f"
-
+Plug 'ctrlpvim/ctrlp.vim'  " fuzzy file matcher / opener
+let ctrlp_user_cmd_fallback = 'find %s -type f'
+if executable('rg') | let ctrlp_user_cmd_fallback = 'rg --files %s' | endif
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', ctrlp_user_cmd_fallback]
 Plug 'fisadev/vim-ctrlp-cmdpalette'  " fuzzy command matcher / runner
 "TODO: detect SHIFT?: map <Shift><C-p> :CtrlPCmdPalette<CR>
 
