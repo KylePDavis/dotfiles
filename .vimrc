@@ -110,11 +110,6 @@ Plug 'tpope/vim-fugitive'  " git commands and statusline
 
 Plug 'mhinz/vim-signify'  " label VCS changes in gutter
 
-Plug 'oplatek/Conque-Shell'  " a shell in a buffer
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_InsertOnEnter = 1
-let g:ConqueTerm_CloseOnEnd = 1
-
 Plug 'pangloss/vim-javascript'  " better JavaScript support
 
 Plug 'moll/vim-node'  " nodejs extras
