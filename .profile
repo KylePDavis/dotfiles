@@ -141,7 +141,7 @@ if [ "$ZSH_VERSION" ]; then
 
 	BUNDLES=(
 		zsh-users/zsh-syntax-highlighting
-		mafredri/zsh-async
+		mafredri/zsh-async@main
 		sindresorhus/pure@main
 	)
 	for B in ${=BUNDLES}; do
