@@ -1,3 +1,6 @@
+# Shell Profile/Config File
+# NOTE: symlinked to multiple files to apply in multiple shells/scenarios; see install.sh
+
 ###############################################################################
 # Non-interactive shell configuration
 ###############################################################################
