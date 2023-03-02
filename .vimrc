@@ -3,7 +3,6 @@ set ruler
 set mouse=a
 set nocompatible
 set bs=2
-set hlsearch
 set nowrap
 
 " give me all of teh colors!!
@@ -11,6 +10,17 @@ set t_Co=256
 set bg=dark
 colorscheme elflord
 syntax on
+
+" misc
+set path+=** " make :find tab-completion search subdirectories
+set wildmenu " show tab-complete menu for : commands
+
+" search
+set ignorecase " case insensitive search
+set smartcase  " auto switch to case-sensitive if uppercase *is* used
+set incsearch  " live incremental searching
+set showmatch  " show matches live while typing
+set hlsearch   " highlight matches
 
 " tabs
 set shiftwidth=4
