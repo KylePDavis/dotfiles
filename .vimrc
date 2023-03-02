@@ -103,8 +103,6 @@ Plug 'ctrlpvim/ctrlp.vim'  " fuzzy file matcher / opener
 let ctrlp_user_cmd_fallback = 'find %s -type f'
 if executable('rg') | let ctrlp_user_cmd_fallback = 'rg --files %s' | endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', ctrlp_user_cmd_fallback]
-Plug 'fisadev/vim-ctrlp-cmdpalette'  " fuzzy command matcher / runner
-"TODO: detect SHIFT?: map <Shift><C-p> :CtrlPCmdPalette<CR>
 
 Plug 'tpope/vim-fugitive'  " git commands and statusline
 
