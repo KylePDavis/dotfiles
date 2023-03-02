@@ -74,10 +74,6 @@ let g:airline#extensions#tabline#show_buffers = 0
 set laststatus=2
 set ttimeoutlen=50
 
-Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }  " tree file browser
-map <C-\> :NERDTreeToggle<CR>
-"TODO: detect SHIFT?: map <Shift><C-\> :NERDTreeFind<CR>
-
 Plug 'mg979/vim-visual-multi'  " multiple cursor support
 
 Plug 'editorconfig/editorconfig-vim'
