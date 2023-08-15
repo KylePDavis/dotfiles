@@ -117,11 +117,6 @@ alias ts-node-print="env-ts-node node-print"
 # color theme setup for bat (not aliased to cat directly because it's a bit slow)
 command -v bat >/dev/null  ||  export BAT_THEME="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo 'Visual Studio Dark+' || echo GitHub)"
 
-# MacVim shell aliases
-if [ "$OS" = "Darwin" ]; then
-	alias gvim="mvim"
-fi
-
 # fancy shell prompts
 if [ "$ZSH_VERSION" ]; then
 
