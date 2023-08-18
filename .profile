@@ -77,11 +77,6 @@ else
 	setopt HIST_IGNORE_SPACE # ignore if leading space
 fi
 
-# check window size after each command
-if [ ! "$ZSH_VERSION" ]; then
-	shopt -s checkwinsize
-fi
-
 # Custom shell aliases
 if [ "$OS" = "Darwin" ]; then
 	export CLICOLOR=1
@@ -168,6 +163,9 @@ if [ "$ZSH_VERSION" ]; then
 	# ensure proper ls-style colors in completion
 	zstyle ':completion:*' list-colors 'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 else
+	# check window size after each command
+	shopt -s checkwinsize
+
 	# tab completion FTW
 	if [ "$OS" = "Darwin" ]; then
 		F="$BREW_PREFIX/etc/bash_completion";  ! [ -f "$F" ]  ||  source "$F"
@@ -175,6 +173,7 @@ else
 	else
 		F="/etc/bash_completion";  ! [ -f "$F" ]  ||  source "$F"
 	fi
+
 	F="$HOME/.liquidprompt/liquidprompt";  ! [ -f "$F" ]  ||  source "$F"
 fi
 
