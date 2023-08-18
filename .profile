@@ -63,18 +63,18 @@ export LESS="-FRX"
 ###############################################################################
 
 # tweak history behavior a bit
-HISTSIZE=60000
+HISTSIZE=100000
 if [ ! "$ZSH_VERSION" ]; then
-	HISTFILESIZE=50000
+	HISTFILESIZE=$HISTSIZE
 	HISTCONTROL="ignoreboth"
 	shopt -s histappend
 	PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 else
-	SAVEHIST=50000
-	setopt HIST_EXPIRE_DUPS_FIRST
-	# https://www.refining-linux.org/archives/49-ZSH-Gem-15-Shared-history.html
-	setopt INC_APPEND_HISTORY
+	SAVEHIST=$HISTSIZE
 	setopt SHARE_HISTORY
+	setopt EXTENDED_HISTORY
+	setopt HIST_EXPIRE_DUPS_FIRST
+	setopt HIST_IGNORE_SPACE # ignore if leading space
 fi
 
 # check window size after each command
