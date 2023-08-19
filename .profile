@@ -162,10 +162,12 @@ if [ "$ZSH_VERSION" ]; then
 		echo "Creating a zgenom save ..."
 		zgenom loadall <<EOF
 			sindresorhus/pure
+			zsh-users/zsh-autosuggestions
 			zsh-users/zsh-syntax-highlighting
 EOF
 		zgenom save
 	fi
+	ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(backward-kill-word)
 else
 	# check window size after each command
 	shopt -s checkwinsize
