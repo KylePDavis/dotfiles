@@ -145,9 +145,15 @@ if [ "$ZSH_VERSION" ]; then
 	# use emacs-style for most defaults
 	bindkey -e
 
-	# jump more like bash did
+	# jump more like bash did with Alt + Left/Right arrow
 	bindkey "^[f" vi-forward-word
 	bindkey "^[b" vi-backward-word
+
+	# bindings for if you're not using Options as Meta key in Terminal (e.g., VSCode)
+	bindkey "∑" vi-backward-kill-word  # Alt + w
+	bindkey "ƒ" vi-forward-word    # Alt + f
+	bindkey "∫" vi-backward-word   # Alt + b
+	bindkey "≥" insert-last-word   # Alt + .
 
 	# editor
 	autoload -z edit-command-line
