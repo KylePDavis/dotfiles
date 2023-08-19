@@ -38,6 +38,12 @@ imap <S-Tab> <Esc><<i
 set foldmethod=syntax
 set foldlevelstart=99
 
+" map Alt+Right/Left arrow to movements
+nmap <Esc>f <Esc>e
+nmap <Esc>b <Esc>b
+imap <Esc>f <Esc>lei
+imap <Esc>b <Esc>bi
+
 " simplify working with the system clipboard
 vmap <C-c> "+y
 nmap <C-c> V"+y
