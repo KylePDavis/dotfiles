@@ -150,6 +150,9 @@ if [ "$ZSH_VERSION" ]; then
 	# allow trailing slashes on ".."
 	zstyle ':completion:*' special-dirs true
 
+	# enable inline comments since other shells allow it and sometimes they're nice to have
+	setopt interactive_comments
+
 	# ensure proper ls-style colors in completion
 	zstyle ':completion:*' list-colors 'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
