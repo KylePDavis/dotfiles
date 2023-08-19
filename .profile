@@ -126,22 +126,6 @@ if [ "$ZSH_VERSION" ]; then
 		done
 	fi
 
-	ANTIGEN_DIR="$HOME/.antigen"
-	[ -d "$ANTIGEN_DIR" ] || mkdir "$ANTIGEN_DIR"
-	ANTIGEN_BIN="$ANTIGEN_DIR/antigen.zsh"
-	[ -f "$ANTIGEN_BIN" ] || curl -L git.io/antigen > "$ANTIGEN_BIN"
-	source "$ANTIGEN_BIN"
-
-	BUNDLES=(
-		zsh-users/zsh-syntax-highlighting
-		mafredri/zsh-async@main
-		sindresorhus/pure@main
-	)
-	for B in ${=BUNDLES}; do
-		antigen bundle "$B"
-	done
-	antigen apply
-
 	# use emacs-style for most defaults
 	bindkey -e
 
@@ -168,6 +152,20 @@ if [ "$ZSH_VERSION" ]; then
 
 	# ensure proper ls-style colors in completion
 	zstyle ':completion:*' list-colors 'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+	# setup zgenom and plugins for zsh
+	ZGENOM_DIR="${HOME}/.zgenom"
+	[ -d "$ZGENOM_DIR" ] || git clone https://github.com/jandamm/zgenom.git "$ZGENOM_DIR"
+	source "$ZGENOM_DIR/zgenom.zsh"
+	zgenom autoupdate
+	if ! zgenom saved; then
+		echo "Creating a zgenom save ..."
+		zgenom loadall <<EOF
+			sindresorhus/pure
+			zsh-users/zsh-syntax-highlighting
+EOF
+		zgenom save
+	fi
 else
 	# check window size after each command
 	shopt -s checkwinsize
