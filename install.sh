@@ -27,7 +27,6 @@ link() {
 FILES="
 	.profile
 	.vimrc
-	.eslintrc.js
 	.irbrc
 "
 
