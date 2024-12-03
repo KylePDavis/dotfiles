@@ -35,12 +35,6 @@ fi
 # Default editor
 export EDITOR="vim"
 
-# Help things find Google Chrome
-if [ "$OS" = "Darwin" ]; then
-	CHROME_BIN="$HOME/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-	! [ -f "$CHROME_BIN" ]  ||  export CHROME_BIN
-fi
-
 # Configure go lang
 if [ "$OS" = "Darwin" ]; then
 	export GOROOT="$BREW_PREFIX/opt/go/libexec"
