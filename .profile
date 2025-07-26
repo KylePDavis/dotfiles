@@ -78,6 +78,9 @@ else
 	setopt HIST_IGNORE_SPACE # ignore if leading space
 fi
 
+# Enable auto-switching by adding mise-aware tool shims to PATH (which resolves tool versions lazily and avoids issues caused by other approaches)
+! has_bin mise  ||  export PATH="$HOME/.local/share/mise/shims:$PATH"
+
 # Custom shell aliases
 if [ "$OS" = "Darwin" ]; then
 	export CLICOLOR=1
