@@ -19,7 +19,8 @@ OS=$(uname -s)
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 
 # Setup user-specific Python overrides
-if [ "$OS" = "Darwin" ]; then
+_PY_BASE_DIR="$HOME/Library/Python/";
+if [ "$OS" = "Darwin" ] && [ -d "$_PY_BASE_DIR" ]; then
 	for PY_DIR in "$HOME/Library/Python/"*/; do
 		export PATH="$PY_DIR/bin:$PATH"
 	done
