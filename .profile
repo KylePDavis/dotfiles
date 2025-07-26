@@ -114,6 +114,7 @@ alias tree="tree -C -F"
 alias grep="grep --color"
 alias man='LESS_TERMCAP_md=$(tput bold && tput setaf 4 || :) LESS_TERMCAP_me=$(tput sgr0 || :) LESS_TERMCAP_mb=$(tput blink || :) LESS_TERMCAP_us=$(tput setaf 2 || :) LESS_TERMCAP_ue=$(tput sgr0 || :) LESS_TERMCAP_so=$(tput smso || :) LESS_TERMCAP_se=$(tput rmso || :) PAGER="${commands[less]:-$PAGER}" man'
 alias vi=vim
+! has_bin nvim  ||  alias vim=nvim
 
 # aliases for node
 alias node-print="node -e 'let [,f=\".\",e=\"this\"]=process.argv,ctx=require(fs.existsSync(f)?path.resolve(f):f); eval(\`(async function(){ with(this) return (\${e}); })\`).call(ctx).then(console.log,e=>{console.error(e);process.exit(1)})'"
