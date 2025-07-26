@@ -78,6 +78,23 @@ else
 	setopt HIST_IGNORE_SPACE # ignore if leading space
 fi
 
+# Auto fetch and ask to pull if outdated once every 30 days
+DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_GIT_DIR="$DOTFILES_DIR/.git"
+DOTFILES_GIT_FETCH_HEAD_PATH="$DOTFILES_GIT_DIR/FETCH_HEAD"
+DOTFILES_CHECK_DAYS=30
+if [ -d "$DOTFILES_GIT_DIR" ] && [ $(( $(date +%s) - $(date -r "$DOTFILES_GIT_FETCH_HEAD_PATH" +%s) )) -gt $(( $DOTFILES_CHECK_DAYS * 24 * 60 * 60 )) ]; then
+	# auto fetch repo
+	git -C "$DOTFILES_DIR" fetch || :
+	# complain if branch is outdated and ask to update
+	COMMITS_BEHIND=$(git -C "$DOTFILES_DIR" rev-list --count HEAD..@{u})
+	if [ "$COMMITS_BEHIND" -gt 0 ]; then
+		echo "😅 Outdated dotfiles repo!"
+		echo "🧐   Review via:  git -C \"\$DOTFILES_DIR\" log HEAD..@{u} --oneline --reverse"
+		echo "👍   Update via:  git -C \"\$DOTFILES_DIR\" pull"
+	fi
+fi
+
 # Enable auto-switching by adding mise-aware tool shims to PATH (which resolves tool versions lazily and avoids issues caused by other approaches)
 ! has_bin mise  ||  export PATH="$HOME/.local/share/mise/shims:$PATH"
 
