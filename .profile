@@ -155,22 +155,29 @@ if [ "${BAT_BIN:=$(get_bin bat)}" ]; then
 		alias -g -- --help='--help 2>&1 | bat -p -l=help'
 	fi
 
+	# monkeypatch tail to use bat to colorize things
+	if [ "${TAIL_BIN:=$(get_bin tail)}" ]; then
+		tail(){
+			LAST_ARG=${@[-1]}
+			if [ "$LAST_ARG" ]; then
+				LAST_FILE=$(ls -1 "$LAST_ARG" | "$TAIL_BIN" -n1)
+				"$TAIL_BIN" "$@" | "$BAT_BIN" -Pp --file-name="$LAST_FILE"
+			else
+				"$TAIL_BIN" "$@"
+			fi
+		}
+	fi
+
 	# monkeypatch head to use bat to colorize things
 	if [ "${HEAD_BIN:=$(get_bin head)}" ]; then
 		head(){
-			local N=10
-			case "$1" in
-				-c*|--bytes*)
-					"$HEAD_BIN" "$@"
-					;;
-				*)
-					if [[ "$1" =~ ^-(n|-lines)$ ]] && N=$(as_num "$2"); then
-						shift 2
-					elif [[ "$1" =~ ^-(n=?|-lines=) ]] && N=$(as_num "${1##*[^0-9]}"); then
-						shift 1
-					fi
-					"$BAT_BIN" --line-range=":$N" "$@"
-			esac
+			LAST_ARG=${@[-1]}
+			if [ "$LAST_ARG" ]; then
+				LAST_FILE=$(ls -1 "$LAST_ARG" | "$TAIL_BIN" -n1)
+				"$HEAD_BIN" "$@" | "$BAT_BIN" -Pp --file-name="$LAST_FILE"
+			else
+				"$HEAD_BIN" "$@"
+			fi
 		}
 	fi
 
