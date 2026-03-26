@@ -83,7 +83,7 @@ DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_GIT_DIR="$DOTFILES_DIR/.git"
 DOTFILES_GIT_FETCH_HEAD_PATH="$DOTFILES_GIT_DIR/FETCH_HEAD"
 DOTFILES_CHECK_DAYS=30
-if [ -d "$DOTFILES_GIT_DIR" ] && [ $(( $(date +%s) - $(date -r "$DOTFILES_GIT_FETCH_HEAD_PATH" +%s) )) -gt $(( $DOTFILES_CHECK_DAYS * 24 * 60 * 60 )) ]; then
+if [ -d "$DOTFILES_GIT_DIR" ] && [[ ! -f "$DOTFILES_GIT_FETCH_HEAD_PATH"  ||  $(( $(date +%s) - $(date -r "$DOTFILES_GIT_FETCH_HEAD_PATH" +%s) )) -gt $(( $DOTFILES_CHECK_DAYS * 24 * 60 * 60 )) ]]; then
 	# auto fetch repo
 	git -C "$DOTFILES_DIR" fetch || :
 	# complain if branch is outdated and ask to update
