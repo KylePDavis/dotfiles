@@ -39,6 +39,17 @@ link "$CMD_DIR/.profile" "$HOME/.zshrc"
 link "$CMD_DIR/.profile" "$HOME/.bashrc"
 link "$CMD_DIR/.profile" "$HOME/.bash_profile" # certain scenarios use this one
 
+# setup nvim to use .vimrc
+NVIM_CFG_DIR="$HOME/config/nvim"
+if ! [ -f "$NVIM_CFG_DIR/init.vim" ]; then
+	mkdir -p "$NVIM_CFG_DIR"
+	echo "
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+" > "$NVIM_CFG_DIR/init.vim"
+fi
+
 OS=$(uname -s)
 if [ "$OS" = "Darwin" ]; then
 	# Enable "All Controls" for tab in: System Settings > Keyboard > Keyboard navigation
