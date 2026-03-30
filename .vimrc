@@ -294,15 +294,15 @@ if executable('node')
 
 	" Mappings for CoCList
 	" Show all diagnostics
-	nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+	nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<CR>
 	" Manage extensions
-	nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+	nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<CR>
 	" Show commands
-	nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+	nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<CR>
 	" Find symbol of current document
-	nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+	nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<CR>
 	" Search workspace symbols
-	nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+	nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<CR>
 	" Do default action for next item
 	nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 	" Do default action for previous item
